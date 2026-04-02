@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Máy tính Hòa Phát Yên Thành Nghệ An - Uy tín hàng đầu chuyên cung cấp laptop, máy tính để bàn, máy in, camera. Bảo hành dài hạn, hỗ trợ phần mềm trọn đời, lắp đặt tận tình, giá phù hợp mọi nhu cầu.">
+    <meta name="keywords" content="mua máy tính uy tín Yên Thành, Máy tính Hòa Phát Yên Thành, laptop Yên Thành Nghệ An, bảo hành dài hạn, hỗ trợ phần mềm trọn đời">
+    <meta name="author" content="Máy tính Hòa Phát">
+    <title>Máy tính Hòa Phát Yên Thành Nghệ An - Uy tín, Tận tâm, Giá tốt</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="icon" type="image/x-icon" href="img/lg_new.png">
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    <style>
+        /* Cập nhật màu sắc chủ đạo sang xanh navy */
+        :root {
+            --primary-color: #1e3a6f;
+            --primary-dark: #0a2a4a;
+            --primary-light: #2c4c8c;
+            --accent-color: #2980b9;
+        }
+        
+        /* Điều chỉnh màu sắc cho các thành phần */
+        .primary-btn, 
+        .newsletter-btn,
+        button[type="submit"] {
+            background: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+        }
+        
+        .primary-btn:hover, 
+        .newsletter-btn:hover {
+            background: var(--primary-dark) !important;
+        }
+        
+        .section-title-custom:after {
+            background: var(--primary-color);
+        }
+        
+        .advantage-icon {
+            color: var(--primary-color);
+        }
+        
+        .testimonial-card i.fa-quote-left {
+            color: var(--primary-color) !important;
+        }
+        
+        .footer a:hover {
+            color: var(--primary-color);
+        }
+        
+        .header-links li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #f0f4fa 0%, #e8edf5 100%);
+            padding: 50px 0;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .hero-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content h1 strong {
+            color: var(--primary-color);
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+        
+        .advantage-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .advantage-box {
+            text-align: center;
+            padding: 25px 15px;
+            background: #fff;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .advantage-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .advantage-box h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 15px 0 10px;
+            color: #2c3e50;
+        }
+        
+        .advantage-box p {
+            color: #5a6e7c;
+            font-size: 15px;
+        }
+        
+        .section-title-custom {
+            font-size: 28px;
+            font-weight: 700;
+            position: relative;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1e2a36;
+        }
+        
+        .section-title-custom:after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 12px auto 0;
+            border-radius: 3px;
+        }
+        
+        .product-highlight {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .product-highlight:hover {
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .testimonial-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            color: #2d3748;
+        }
+        
+        .map-placeholder {
+            background: #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .hotline-box {
+            background: #e8f0fa;
+            border-radius: 40px;
+            padding: 6px 15px;
+        }
+        
+        .hero-content .primary-btn:first-child {
+            background: var(--primary-color) !important;
+        }
+        
+        .hero-content .primary-btn:last-child {
+            background: #34495e !important;
+        }
+        
+        .fa-check-circle {
+            color: var(--primary-color) !important;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 24px; }
+            .advantage-box { margin-bottom: 20px; }
+        }
+        
+        .search-btn-modern:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .newsletter-btn {
+            background: var(--primary-color) !important;
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="site-header">
+        <div id="top-header">
+            <div class="container">
+                <div class="top-header-wrapper">
+                    <ul class="header-links pull-left">
+                        <li><a href="tel:0337286632"><i class="fa fa-phone"></i> 0337286632</a></li>
+                        <li><a href="mailto:thiennguyen.mark@gmail.com"><i class="fa fa-envelope-o"></i> thiennguyen.mark@gmail.com</a></li>
+                        <li><a href="#"><i class="fa fa-map-marker"></i> Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
+                    </ul>
+                    <ul class="header-links pull-right">
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61584345367065" target="_blank" class="fb-link">
+                                <i class="fa fa-facebook-square"></i> Fanpage Hòa Phát
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="header">
+            <div class="container">
+                <div class="row header-main-wrapper">
+                    <div class="col-md-3 col-sm-4">
+                        <div class="header-logo">
+                            <a href="/index.html" class="logo">
+                                <img src="./img/hoaphat_mini_logo.jpg" alt="Máy Tính Hòa Phát Yên Thành">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-8">
+                        <div class="header-search">
+                            <form class="search-form-modern">
+                                <div class="search-select-wrapper">
+                                    <select class="input-select">
+                                        <option value="0">Tất cả danh mục</option>
+                                        <option value="1">Laptop học tập</option>
+                                        <option value="2">Máy tính để bàn</option>
+                                        <option value="3">Máy in</option>
+                                        <option value="4">Camera giám sát</option>
+                                    </select>
+                                </div>
+                                <input class="input modern-input" placeholder="Tìm kiếm sản phẩm, linh kiện...">
+                                <button type="button" class="search-btn-modern"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 clearfix">
+                        <div class="header-ctn">
+                            <div class="hotline-box">
+                                <div class="hotline-icon">
+                                    <i class="fa fa-headphones"></i>
+                                </div>
+                                <div class="hotline-text">
+                                    <span>Tư vấn miễn phí</span>
+                                    <strong>0337.286.632</strong>
+                                </div>
+                            </div>
+                            <div class="menu-toggle">
+                                <a href="#">
+                                    <i class="fa fa-bars"></i>
+                                    <span>Menu</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- MAIN CONTENT - BODY MUA MÁY TÍNH UY TÍN Ở YÊN THÀNH NGHỆ AN -->
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="hero-content">
+                            <h1>Mua máy tính uy tín ở Yên Thành, Nghệ An? <strong style="color:#1e3a6f;">Máy Tính Hòa Phát</strong> là lựa chọn số 1!</h1>
+                            <p>Với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ, Máy Tính Hòa Phát tự hào là địa chỉ tin cậy cho hàng ngàn gia đình, học sinh, sinh viên và doanh nghiệp tại huyện Yên Thành và khu vực lân cận. Chúng tôi không chỉ bán sản phẩm chất lượng mà còn mang đến dịch vụ hậu mãi vượt trội: <strong>bảo hành dài hạn, hỗ trợ phần mềm trọn đời, lắp đặt tận tình</strong> và giá cả phù hợp theo từng nhu cầu.</p>
+                            <a href="https://zalo.me/0337286632" target="_blank" class="primary-btn" style="background:#1e3a6f; border:none; margin-top:20px; display:inline-block;"><i class="fa fa-phone"></i> Gọi ngay: 0337.286.632</a>
+                            <a href="#laptop" class="primary-btn" style="background:#2c3e50; border:none; margin-top:20px; margin-left:10px;"><i class="fa fa-laptop"></i> Xem sản phẩm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ƯU ĐIỂM VƯỢT TRỘI -->
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="section-title-custom">Vì sao chọn Máy Tính Hòa Phát Yên Thành?</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="advantage-box">
+                            <i class="fa fa-shield advantage-icon"></i>
+                            <h4>Bảo hành dài hạn</h4>
+                            <p>Bảo hành chính hãng lên đến 24 tháng cho laptop, máy tính để bàn. Linh kiện chính hãng, chế độ bảo hành 1 đổi 1 trong 30 ngày đầu (nếu lỗi nhà sản xuất).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="advantage-box">
+                            <i class="fa fa-cogs advantage-icon"></i>
+                            <h4>Hỗ trợ phần mềm trọn đời</h4>
+                            <p>Cài đặt Windows, Office, driver, phần mềm học tập miễn phí trọn đời. Bất kỳ khi nào bạn cần cài lại, đội ngũ kỹ thuật sẵn sàng hỗ trợ.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="advantage-box">
+                            <i class="fa fa-truck advantage-icon"></i>
+                            <h4>Lắp đặt tận tình tại nhà</h4>
+                            <p>Miễn phí vận chuyển & lắp đặt trong khu vực Yên Thành. Đội ngũ kỹ thuật viên giàu kinh nghiệm, hướng dẫn sử dụng chi tiết.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="advantage-box">
+                            <i class="fa fa-usd advantage-icon"></i>
+                            <h4>Giá cả phù hợp mọi nhu cầu</h4>
+                            <p>Từ laptop sinh viên giá rẻ, máy tính văn phòng đến cấu hình đồ họa cao cấp. Cam kết giá tốt nhất Yên Thành, hỗ trợ trả góp 0% lãi suất.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SẢN PHẨM TIÊU BIỂU -->
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="section-title-custom" id="laptop">Sản phẩm nổi bật - Đa dạng theo từng nhu cầu</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-highlight">
+                            <img src="img/Laptop_Asus_Expertbook.jpg" alt="Laptop học tập" style="width:100%; height:180px; object-fit:cover; background:#eee;">
+                            <div class="product-info">
+                                <h4>Laptop học tập - văn phòng</h4>
+                                <p>Các dòng Dell, HP, Asus, Acer cấu hình mạnh, pin trâu, phù hợp học online, đồ án, làm việc. Giá chỉ từ 4.9 triệu.</p>
+                                <a href="https://zalo.me/0337286632" class="primary-btn" style="background:#1e3a6f; padding:5px 15px; font-size:12px;">Tư vấn ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-highlight">
+                            <img src="img/PC_Gamming.jpg" alt="Máy tính để bàn" style="width:100%; height:180px; object-fit:cover; background:#eee;">
+                            <div class="product-info">
+                                <h4>Máy tính để bàn</h4>
+                                <p>Bộ PC gaming, đồ họa, văn phòng linh hoạt. Linh kiện mới 100%, bảo hành 36 tháng. Nâng cấp dễ dàng.</p>
+                                <a href="https://zalo.me/0337286632" class="primary-btn" style="background:#1e3a6f; padding:5px 15px; font-size:12px;">Tư vấn ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-highlight">
+                            <img src="img/camera.jpg" alt="Camera giám sát" style="width:100%; height:180px; object-fit:cover; background:#eee;">
+                            <div class="product-info">
+                                <h4>Camera giám sát</h4>
+                                <p>Chuyên lắp đặt camera an ninh, ghi hình ban đêm, xem từ xa qua điện thoại. Bảo hành 12 tháng, hỗ trợ trọn gói.</p>
+                                <a href="https://zalo.me/0337286632" class="primary-btn" style="background:#1e3a6f; padding:5px 15px; font-size:12px;">Tư vấn ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-highlight">
+                            <img src="img/lbp_6030.jpg" alt="Máy in" style="width:100%; height:180px; object-fit:cover; background:#eee;">
+                            <div class="product-info">
+                                <h4>Máy in văn phòng</h4>
+                                <p>Canon, Brother, HP đa chức năng. Giá rẻ, bảo hành chính hãng, hỗ trợ cài đặt mạng và nạp mực tận nơi.</p>
+                                <a href="https://zalo.me/0337286632" class="primary-btn" style="background:#1e3a6f; padding:5px 15px; font-size:12px;">Tư vấn ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dịch vụ hỗ trợ đặc biệt -->
+            <div class="section" style="background:#f8f9fc; border-radius: 24px; padding: 30px 0; margin-bottom: 40px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 style="font-size:24px; font-weight:700;">Trọn gói hỗ trợ phần mềm trọn đời</h3>
+                            <p>Khi mua laptop hay máy tính để bàn tại Hòa Phát, quý khách được tặng gói cài đặt Windows bản quyền, Office, các phần mềm học tập, diệt virus miễn phí. Hỗ trợ cài lại bất cứ lúc nào không giới hạn. Đặc biệt, đội ngũ kỹ thuật viên luôn sẵn sàng hướng dẫn sử dụng qua điện thoại hoặc trực tiếp tại nhà.</p>
+                            <ul style="list-style: none; padding-left:0;">
+                                <li><i class="fa fa-check-circle" style="color:#1e3a6f;"></i> Cài đặt driver chuẩn, tối ưu hiệu suất</li>
+                                <li><i class="fa fa-check-circle" style="color:#1e3a6f;"></i> Sao lưu dữ liệu miễn phí khi bảo hành</li>
+                                <li><i class="fa fa-check-circle" style="color:#1e3a6f;"></i> Hỗ trợ từ xa 24/7 cho các lỗi phần mềm</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 style="font-size:24px; font-weight:700;">Lắp đặt tận tình, chu đáo tại Yên Thành</h3>
+                            <p>Chúng tôi hiểu rằng việc setup máy tính mới có thể phức tạp với nhiều gia đình. Vì thế, Máy tính Hòa Phát miễn phí vận chuyển và lắp đặt toàn bộ hệ thống trong địa bàn huyện Yên Thành. Kỹ thuật viên sẽ kiểm tra kỹ càng, hướng dẫn sử dụng cơ bản để khách hàng an tâm sử dụng ngay.</p>
+                            <a href="https://zalo.me/0337286632" class="btn" style="background:#1e3a6f; color:#fff; margin-top:15px;"><i class="fa fa-phone"></i> Đặt lịch lắp đặt</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Đánh giá khách hàng -->
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="section-title-custom">Khách hàng Yên Thành nói gì về Hòa Phát?</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <i class="fa fa-quote-left" style="color:#1e3a6f; font-size:24px;"></i>
+                            <p>"Mình mua laptop cho con học lớp 9, được tư vấn nhiệt tình, hỗ trợ cài phần mềm học tập trọn đời. Bé dùng rất mượt, lại còn bảo hành dài hạn. Rất yên tâm!"</p>
+                            <strong>- Chị Lan Anh, xã Hoa Thành</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <i class="fa fa-quote-left" style="color:#1e3a6f; font-size:24px;"></i>
+                            <p>"Máy tính Hòa Phát lắp đặt camera giám sát cho nhà tôi rất chuyên nghiệp, giá tốt hơn nhiều nơi. Lắp đặt tận tình, hướng dẫn xem từ xa. Sẽ ủng hộ dài dài."</p>
+                            <strong>- Anh Minh Đức, thị trấn Yên Thành</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <i class="fa fa-quote-left" style="color:#1e3a6f; font-size:24px;"></i>
+                            <p>"Cảm ơn shop hỗ trợ cài win và văn phòng trọn đời, lúc máy chậm còn remote chỉnh giúp. Chất lượng phục vụ đáng đồng tiền. Mua máy tính ở đây đúng chuẩn uy tín."</p>
+                            <strong>- Thầy Hùng, giáo viên THCS Phan Đăng Lưu</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Địa chỉ và cam kết -->
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>📍 Địa chỉ tin cậy tại trung tâm Yên Thành</h3>
+                        <p><strong>Máy Tính Hòa Phát</strong> tọa lạc tại vị trí thuận lợi: <strong>Đối diện trường THCS Phan Đăng Lưu, huyện Yên Thành, Nghệ An</strong>. Dễ dàng tìm kiếm cho cả khách ở xã Lăng Thành, Bảo Thành, Tân Thành,... Showroom trưng bày đa dạng mẫu mã, đội ngũ tư vấn chuyên nghiệp, giúp bạn chọn được sản phẩm phù hợp túi tiền và nhu cầu học tập, làm việc, giải trí.</p>
+                        <p>Đặc biệt: Hỗ trợ trả góp chỉ từ 0% lãi suất, thủ tục nhanh chóng. Có đầy đủ hóa đơn VAT, phiếu bảo hành điện tử minh bạch.</p>
+                        <a href="https://maps.app.goo.gl/LyhMHBcMZmrimKhC7" target="_blank" class="btn" style="background:#2c3e50; color:#fff;"><i class="fa fa-map-marker"></i> Xem bản đồ chỉ đường</a>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="map-placeholder">
+                            <i class="fa fa-map" style="font-size:48px; color:#1e3a6f;"></i>
+                            <p><strong>Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</strong></p>
+                            <p>Mở cửa: 8h00 - 21h00 tất cả các ngày trong tuần (kể cả chủ nhật)</p>
+                            <p>Hotline tư vấn: 0337.286.632</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gợi ý chọn cấu hình -->
+            <div class="section" style="background:#f1f3f5; border-radius: 24px; padding: 35px 20px; margin-bottom: 40px;">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3 style="font-size:26px;">Chọn cấu hình phù hợp với nhu cầu của bạn</h3>
+                        <p>Đội ngũ kỹ thuật sẽ tư vấn chi tiết, từ laptop cơ bản cho học sinh đến máy trạm đồ họa chuyên nghiệp. Bảng giá linh động, luôn có ưu đãi hấp dẫn.</p>
+                    </div>
+                    <div class="col-md-3 col-xs-6 text-center">
+                        <div><i class="fa fa-graduation-cap fa-3x" style="color:#1e3a6f;"></i></div>
+                        <h5>Học sinh - Sinh viên</h5>
+                        <small>Laptop ổn định, pin khỏe, tầm giá 5-9 triệu</small>
+                    </div>
+                    <div class="col-md-3 col-xs-6 text-center">
+                        <div><i class="fa fa-briefcase fa-3x" style="color:#1e3a6f;"></i></div>
+                        <h5>Văn phòng - Kinh doanh</h5>
+                        <small>Máy tính để bàn, laptop doanh nhân, xử lý đa nhiệm</small>
+                    </div>
+                    <div class="col-md-3 col-xs-6 text-center">
+                        <div><i class="fa fa-gamepad fa-3x" style="color:#1e3a6f;"></i></div>
+                        <h5>Gaming - Đồ họa</h5>
+                        <small>Card rời, RAM 16GB, màn hình tốc độ cao</small>
+                    </div>
+                    <div class="col-md-3 col-xs-6 text-center">
+                        <div><i class="fa fa-home fa-3x" style="color:#1e3a6f;"></i></div>
+                        <h5>Gia đình</h5>
+                        <small>PC đa năng, máy in, camera an ninh trọn bộ</small>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top:25px;">
+                    <a href="tel:0337286632" class="primary-btn" style="background:#1e3a6f;">Nhận tư vấn miễn phí ngay</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- /END BODY NỘI DUNG CHÍNH -->
+
+    <!-- NEWSLETTER -->
+    <div id="newsletter" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="newsletter">
+                        <p>Để lại thông tin Email chính thức với <strong>Máy tính Hòa Phát</strong> để nhận ưu đãi và bảng giá mới nhất</p>
+                        <form>
+                            <input class="input" type="email" placeholder="Nhập email của bạn">
+                            <button class="newsletter-btn"><i class="fa fa-envelope"></i> Gửi</button>
+                        </form>
+                        <ul class="newsletter-follow">
+                            <li><a href="https://www.facebook.com/profile.php?id=61584345367065"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /NEWSLETTER -->
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Về Chúng Tôi</h3>
+                            <p>Máy Tính Hòa Phát – Uy tín tạo nên giá trị. Chuyên cung cấp laptop và máy tính chất lượng cho học tập – văn phòng. Bảo hành chu đáo, hỗ trợ tận tâm, giá cả phù hợp mọi gia đình tại Yên Thành.</p>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-map-marker"></i>Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>0337286632</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>thiennguyen.mark@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Danh mục sản phẩm</h3>
+                            <ul class="footer-links">
+                                <li><a href="#laptop">Laptop học tập</a></li>
+                                <li><a href="#desktop">Máy tính để bàn</a></li>
+                                <li><a href="#camera">Camera giám sát</a></li>
+                                <li><a href="#printer">Máy in</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-xs"></div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Thông Tin</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Liên hệ chúng tôi</a></li>
+                                <li><a href="#">Chính sách bán hàng</a></li>
+                                <li><a href="#">Đặt Hàng và Thanh Toán</a></li>
+                                <li><a href="#">Hỗ trợ bảo hành</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Kết nối</h3>
+                            <ul class="footer-links">
+                                <li><a href="https://www.facebook.com/profile.php?id=61584345367065" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i> Youtube</a></li>
+                                <li><a href="#"><i class="fa fa-zalo"></i> Zalo Official</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bottom-footer" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="footer-payments">
+                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                        </ul>
+                        <span class="copyright">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Máy tính Hòa Phát - Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An<br>
+                            <span style="font-size: 12px;">Bảo hành dài hạn | Hỗ trợ phần mềm trọn đời | Lắp đặt tận tình | Giá cả phù hợp mọi nhu cầu</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+
+    <!-- jQuery Plugins -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            var header = $("#header");
+            var stickyOffset = header.offset().top;
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > stickyOffset) {
+                    header.addClass("sticky-header");
+                } else {
+                    header.removeClass("sticky-header");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
