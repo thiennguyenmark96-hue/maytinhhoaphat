@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Máy tính Hòa Phát Yên Thành Nghệ An - Dịch vụ sửa chữa máy tính, hỗ trợ kỹ thuật phần cứng, phần mềm, máy in chuyên nghiệp. Uy tín, giá rẻ, bảo hành dài lâu.">
+    <meta name="keywords" content="sửa chữa máy tính Yên Thành, hỗ trợ kỹ thuật Yên Thành, sửa máy in, máy tính Hòa Phát, linh kiện máy tính Nghệ An">
+    <title>Dịch vụ Sửa chữa & Kỹ thuật - Máy tính Hòa Phát Yên Thành</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="icon" type="image/x-icon" href="img/lg_new.png">
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    <style>
+        /* Màu chủ đạo xanh navi */
+        :root {
+            --navy: #1a2c4e;
+            --navy-light: #2a3f6e;
+            --navy-lighter: #eef3fc;
+        }
+        .service-section-navy {
+            background: linear-gradient(135deg, #f4f9ff 0%, #e9f0fa 100%);
+            padding: 60px 0;
+            border-top: 1px solid #cddfe7;
+            border-bottom: 1px solid #cddfe7;
+        }
+        .section-title-navy {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--navy);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+        .section-title-navy:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--navy);
+        }
+        .service-card-navy {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(26,44,78,0.08);
+            margin-bottom: 30px;
+            height: 100%;
+            border: 1px solid #e2edf7;
+        }
+        .service-card-navy:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(26,44,78,0.15);
+            border-color: var(--navy-light);
+        }
+        .service-icon-navy {
+            font-size: 52px;
+            color: var(--navy);
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--navy-lighter);
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 50%;
+        }
+        .service-card-navy h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 20px 0 12px;
+            color: var(--navy);
+        }
+        .service-card-navy p {
+            color: #4a627a;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+        .service-list-navy {
+            text-align: left;
+            padding-left: 0;
+            list-style: none;
+            margin-top: 10px;
+        }
+        .service-list-navy li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 24px;
+            font-size: 13px;
+            color: #2c3e50;
+        }
+        .service-list-navy li:before {
+            content: "✔";
+            color: var(--navy);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .btn-navy {
+            background-color: var(--navy);
+            border: none;
+            padding: 10px 28px;
+            border-radius: 40px;
+            color: #fff;
+            font-weight: 500;
+            margin-top: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn-navy:hover {
+            background-color: #0f1e38;
+            color: #fff;
+            transform: scale(1.02);
+        }
+        .tech-badge-navy {
+            background: var(--navy);
+            color: #ffecb3;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .support-box-navy {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 35px;
+            margin-top: 40px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+            border: 1px solid #dce7f0;
+        }
+        .why-item-navy {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .why-icon-navy {
+            background: var(--navy-lighter);
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            border-radius: 50%;
+            color: var(--navy);
+            font-size: 20px;
+        }
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideDown 0.35s ease;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%);}
+            to {transform: translateY(0);}
+        }
+        #header {
+            transition: all 0.3s;
+            background: #fff;
+        }
+        .img-illus {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .review-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--navy);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        /* Căn chỉnh bản đồ và Zalo */
+        .map-zalo-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .map-card {
+            flex: 1;
+            min-width: 280px;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        .map-card:hover {
+            transform: translateY(-5px);
+        }
+        .map-card-header {
+            background: var(--navy);
+            color: white;
+            padding: 14px 20px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .map-card-header i {
+            margin-right: 10px;
+        }
+        .map-container {
+            width: 100%;
+            height: 320px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .zalo-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .zalo-qr {
+            max-width: 180px;
+            margin: 15px auto;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .zalo-button {
+            background: #0068ff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .zalo-button:hover {
+            background: #0050cc;
+            color: white;
+        }
+        .address-info {
+            padding: 10px 20px 20px;
+            font-size: 14px;
+            color: #4a5568;
+            border-top: 1px solid #edf2f7;
+        }
+        @media (max-width: 768px) {
+            .map-zalo-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="site-header">
+        <div id="top-header">
+            <div class="container">
+                <div class="top-header-wrapper">
+                    <ul class="header-links pull-left">
+                        <li><a href="tel:0337286632"><i class="fa fa-phone"></i> 0337286632</a></li>
+                        <li><a href="mailto:thiennguyen.mark@gmail.com"><i class="fa fa-envelope-o"></i> thiennguyen.mark@gmail.com</a></li>
+                        <li><a href="#"><i class="fa fa-map-marker"></i> Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
+                    </ul>
+                    <ul class="header-links pull-right">
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61584345367065" target="_blank" class="fb-link">
+                                <i class="fa fa-facebook-square"></i> Fanpage Hòa Phát
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="header">
+            <div class="container">
+                <div class="row header-main-wrapper">
+                    <div class="col-md-3 col-sm-4">
+                        <div class="header-logo">
+                            <a href="./index.html" class="logo">
+                                <img src="./img/hoaphat_mini_logo.jpg" alt="Máy Tính Hòa Phát">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-8">
+                        <div class="header-search">
+                            <form class="search-form-modern">
+                                <div class="search-select-wrapper">
+                                    <select class="input-select">
+                                        <option value="0">Tất cả danh mục</option>
+                                        <option value="1">Laptop học tập</option>
+                                        <option value="2">Máy tính để bàn</option>
+                                        <option value="3">Máy in</option>
+                                        <option value="4">Camera giám sát</option>
+                                    </select>
+                                </div>
+                                <input class="input modern-input" placeholder="Tìm kiếm sản phẩm, linh kiện...">
+                                <button type="button" class="search-btn-modern"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 clearfix">
+                        <div class="header-ctn">
+                            <div class="hotline-box">
+                                <div class="hotline-icon">
+                                    <i class="fa fa-headphones"></i>
+                                </div>
+                                <div class="hotline-text">
+                                    <span>Tư vấn miễn phí</span>
+                                    <strong>0337.286.632</strong>
+                                </div>
+                            </div>
+                            <div class="menu-toggle">
+                                <a href="#">
+                                    <i class="fa fa-bars"></i>
+                                    <span>Menu</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- DỊCH VỤ SỬA CHỮA & HỖ TRỢ KỸ THUẬT MÀU XANH NAVI -->
+    <section class="service-section-navy">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <span class="tech-badge-navy"><i class="fa fa-microchip"></i> KỸ THUẬT VIÊN LÀNH NGHỀ - BẢO HÀNH UY TÍN</span>
+                    <h2 class="section-title-navy">Dịch vụ sửa chữa & hỗ trợ kỹ thuật chuyên sâu</h2>
+                    <p class="lead" style="margin-bottom: 30px; color: #2c4c6e;">Máy tính Hòa Phát - Đối tác tin cậy cho mọi thiết bị số tại Yên Thành, Nghệ An</p>
+                </div>
+            </div>
+
+            <!-- Hình ảnh minh họa -->
+            <div class="row" style="margin-bottom: 45px;">
+                <div class="col-md-6">
+                    <img src="./img/HT_MT.jpg" alt="Sửa chữa máy tính tại Yên Thành" class="img-illus">
+                </div>
+                <div class="col-md-6">
+                    <img src="./img/HT_MI.jpg" alt="Hỗ trợ kỹ thuật máy in Yên Thành" class="img-illus">
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Sửa chữa phần cứng -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card-navy">
+                        <div class="service-icon-navy"><i class="fa fa-desktop"></i></div>
+                        <h4>Sửa chữa Phần cứng</h4>
+                        <p>Xử lý mọi sự cố về mainboard, nguồn, RAM, ổ cứng, card đồ họa. Thay thế linh kiện chính hãng, bảo hành dài lâu.</p>
+                        <ul class="service-list-navy">
+                            <li>Chẩn đoán lỗi không nguồn, treo máy, chết main</li>
+                            <li>Thay màn hình laptop, bàn phím, vỏ máy</li>
+                            <li>Vệ sinh máy tính, thay keo tản nhiệt định kỳ</li>
+                            <li>Nâng cấp SSD, RAM tăng tốc máy</li>
+                        </ul>
+                        <a href="tel:0337286632" class="btn-navy"><i class="fa fa-wrench"></i> Đặt lịch sửa ngay</a>
+                    </div>
+                </div>
+
+                <!-- Hỗ trợ phần mềm -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card-navy">
+                        <div class="service-icon-navy"><i class="fa fa-code"></i></div>
+                        <h4>Hỗ trợ Phần mềm</h4>
+                        <p>Khắc phục lỗi Windows, cài đặt driver, diệt virus, phục hồi dữ liệu, tối ưu hóa hiệu suất máy tính văn phòng & học tập.</p>
+                        <ul class="service-list-navy">
+                            <li>Cài Win, Office, phần mềm chuyên dụng</li>
+                            <li>Diệt virus mã độc, bảo mật dữ liệu</li>
+                            <li>Sửa lỗi mất kết nối mạng, lỗi xung đột phần mềm</li>
+                            <li>Phục hồi dữ liệu từ ổ cứng hỏng</li>
+                        </ul>
+                        <a href="tel:0337286632" class="btn-navy"><i class="fa fa-gears"></i> Tư vấn phần mềm</a>
+                    </div>
+                </div>
+
+                <!-- Dịch vụ máy in -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-card-navy">
+                        <div class="service-icon-navy"><i class="fa fa-print"></i></div>
+                        <h4>Máy in - Đổ mực & sửa chữa</h4>
+                        <p>Nhận sửa máy in laser, inkjet mọi thương hiệu: HP, Canon, Brother, Epson. Hỗ trợ cài đặt chia sẻ qua mạng.</p>
+                        <ul class="service-list-navy">
+                            <li>Sửa lỗi kẹt giấy, lỗi ống mực, lỗi đầu in</li>
+                            <li>Đổ mực chất lượng cao, thay hộp mực chính hãng</li>
+                            <li>Cấu hình máy in mạng, in qua WiFi, chia sẻ văn phòng</li>
+                            <li>Bảo trì, vệ sinh máy in định kỳ</li>
+                        </ul>
+                        <a href="tel:0337286632" class="btn-navy"><i class="fa fa-calendar"></i> Bảo dưỡng ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GOOGLE MAP VÀ ZALO NHÚNG - CÂN ĐỐI HOÀN HẢO -->
+            <div class="map-zalo-wrapper">
+                <!-- Google Maps Card -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        <i class="fa fa-map-marker"></i> Vị trí cửa hàng - Google Maps
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.123456789012!2d105.456789!3d19.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3136f8a5b2c4d6e7%3A0x2b4c6d8e0f1a2b3c!2zTcOheSBUw61uaCBIw7JhIFBow6FtIC0gxJBp4buHbiBow7RuIFRIVFMgUGhhbiDEkMSDbmcgTOG6p3U!5e0!3m2!1svi!2s!4v1612345678901!5m2!1svi!2s" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="address-info">
+                        <i class="fa fa-location-arrow" style="color:#1a2c4e;"></i> <strong>Địa chỉ thực tế:</strong> Đối diện THCS Phan Đăng Lưu, Khối 3, Yên Thành, Nghệ An<br>
+                        <i class="fa fa-clock-o"></i> <strong>Giờ mở cửa:</strong> 08:00 - 19:00 (Thứ 2 - Chủ nhật)<br>
+                        <a href="https://maps.app.goo.gl/LyhMHBcMZmrimKhC7" target="_blank" style="color:#1a2c4e; font-weight:500;">Xem chỉ đường trên Google Maps →</a>
+                    </div>
+                </div>
+
+                <!-- Zalo Official Card -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        <i class="fa fa-commenting"></i> Hỗ trợ qua Zalo Official
+                    </div>
+                    <div class="zalo-container">
+                        <img src="./img/QR_HOA_PHAT.jpg" alt="QR Zalo Máy Tính Hòa Phát" class="zalo-qr">
+                        <p style="margin: 10px 0 0; color:#2d3748;">Quét mã QR để chat Zalo <br> hoặc nhấn nút bên dưới</p>
+                        <a href="https://zalo.me/0337286632" target="_blank" class="zalo-button">
+                            <i class="fa fa-comment"></i> Nhắn tin qua Zalo
+                        </a>
+                        <div class="address-info" style="margin-top: 20px;">
+                            <i class="fa fa-phone"></i> <strong>Số Zalo / Điện thoại:</strong> 0337.286.632<br>
+                            <i class="fa fa-file-text-o"></i> Hỗ trợ tư vấn miễn phí, báo giá nhanh 24/7
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support box Kỹ thuật viên -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="support-box-navy">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h3 style="color:#1a2c4e; font-weight:700;"><i class="fa fa-shield-alt"></i> Kỹ thuật viên tay nghề cao – Hỗ trợ tận tâm tại Yên Thành</h3>
+                                <p style="font-size:16px;">Với hơn 8 năm kinh nghiệm trong lĩnh vực <strong>sửa chữa máy tính, hỗ trợ phần cứng & phần mềm, bảo trì máy in</strong>, Máy tính Hòa Phát tự hào là địa chỉ số 1 tại huyện Yên Thành. Chúng tôi cam kết:</p>
+                                <div class="why-item-navy">
+                                    <div class="why-icon-navy"><i class="fa fa-clock-o"></i></div>
+                                    <div><strong>Hỗ trợ nhanh chóng</strong> – Có mặt trong vòng 30 phút tại khu vực thị trấn và các xã lân cận.</div>
+                                </div>
+                                <div class="why-item-navy">
+                                    <div class="why-icon-navy"><i class="fa fa-credit-card-alt"></i></div>
+                                    <div><strong>Giá cả minh bạch</strong> – Báo giá trước khi sửa, không phát sinh chi phí.</div>
+                                </div>
+                                <div class="why-item-navy">
+                                    <div class="why-icon-navy"><i class="fa fa-check-square-o"></i></div>
+                                    <div><strong>Bảo hành dịch vụ lên đến 6 tháng</strong> – Yên tâm sử dụng lâu dài.</div>
+                                </div>
+                                <a href="https://www.facebook.com/profile.php?id=61584345367065" target="_blank" class="btn-navy" style="background:#1a2c4e; margin-right: 12px;"><i class="fa fa-facebook"></i> Chat qua Fanpage</a>
+                                <a href="https://zalo.me/0337286632" class="btn-navy" style="background:#2a5f8a;"><i class="fa fa-phone"></i> Gọi tư vấn: 0337.286.632</a>
+                            </div>
+                            <div class="col-md-5 text-center">
+                                <div style="background:#eef3fc; border-radius: 24px; padding: 20px;">
+                                    <i class="fa fa-map-marker" style="font-size: 40px; color:#1a2c4e;"></i>
+                                    <h4>Địa chỉ cửa hàng</h4>
+                                    <p><strong>Đối diện THCS Phan Đăng Lưu</strong><br>Khối 3, TT Yên Thành, Nghệ An</p>
+                                    <hr>
+                                    <i class="fa fa-clock-o"></i> Mở cửa: 7:30 - 20:00 (kể cả Chủ Nhật)<br>
+                                    <i class="fa fa-truck"></i> Hỗ trợ sửa chữa tận nơi
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review & CTA cuối -->
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-6">
+                    <img src="./img/VGA_HT.jpg" alt="Đội ngũ kỹ thuật Hòa Phát Yên Thành" class="img-illus">
+                </div>
+                <div class="col-md-6">
+                    <div class="review-card">
+                        <i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i>
+                        <p><em>"Anh kỹ thuật đến sửa máy tính tại nhà rất nhiệt tình, máy chạy ổn định lại như mới. Hỗ trợ cài win và phần mềm văn phòng nhanh chóng. Rất hài lòng!"</em></p>
+                        <strong>- Chị Mai, xã Hậu Thành</strong>
+                    </div>
+                    <div class="review-card" style="margin-top: 16px;">
+                        <i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i>
+                        <p><em>"Máy in văn phòng bị lỗi không in, Hòa Phát sửa chỉ 20 phút xong, giá rẻ. Được hướng dẫn cách vệ sinh máy in định kỳ. Sẽ ủng hộ lâu dài."</em></p>
+                        <strong>- Anh Đức, TT Yên Thành</strong>
+                    </div>
+                    <div class="review-card" style="margin-top: 16px;">
+                        <i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i>
+                        <p><em>"Máy in bị kẹt giấy liên tục, gọi Hòa Phát tới kiểm tra và sửa rất nhanh, chỉ khoảng 30 phút là hoạt động bình thường. Nhân viên nhiệt tình, còn hướng dẫn cách bảo dưỡng máy."</em></p>
+                        <strong>- Chị Sơn, xã Phúc Thành</strong>
+                    </div>
+
+                    <div class="review-card" style="margin-top: 16px;">
+                        <i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i>
+                        <p><em>"Dịch vụ sửa máy in rất uy tín, máy của công ty mình bị lỗi không kéo giấy, kỹ thuật xử lý nhanh gọn, chi phí hợp lý. Sẽ tiếp tục sử dụng dịch vụ khi cần."</em></p>
+                        <strong>- Chị Lan, Diễn Châu</strong>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="row text-center" style="margin-top: 50px;">
+                <div class="col-md-12">
+                    <div style="background: #1a2c4e; padding: 30px 20px; border-radius: 60px; color: white;">
+                        <h3 style="color:#ffdd99; margin-bottom: 10px;">📢 Hotline hỗ trợ kỹ thuật 24/7: 0337.286.632</h3>
+                        <p>Đội ngũ kỹ thuật viên sẵn sàng giải đáp mọi vấn đề về máy tính, máy in và linh kiện. Miễn phí tư vấn từ xa!</p>
+                        <a href="tel:0337286632" style="background: white; color: #1a2c4e; padding: 10px 35px; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 12px; text-decoration: none;"><i class="fa fa-phone"></i> Gọi ngay để được hỗ trợ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Về Chúng Tôi</h3>
+                            <p>Máy Tính Hòa Phát – Uy tín tạo nên giá trị. Chuyên sửa chữa, bảo trì máy tính, hỗ trợ kỹ thuật phần cứng - phần mềm và máy in hàng đầu Yên Thành.</p>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-map-marker"></i>Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>0337286632</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>thiennguyen.mark@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Danh mục sản phẩm</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Laptop học tập</a></li>
+                                <li><a href="#">Máy tính để bàn</a></li>
+                                <li><a href="#">Camera giám sát</a></li>
+                                <li><a href="#">Máy in văn phòng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="clearfix visible-xs"></div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Dịch vụ kỹ thuật</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Sửa chữa phần cứng máy tính</a></li>
+                                <li><a href="#">Hỗ trợ cài Win, phần mềm</a></li>
+                                <li><a href="#">Sửa máy in - đổ mực tận nơi</a></li>
+                                <li><a href="#">Nâng cấp máy tính văn phòng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Chính sách</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Bảo hành dài lâu</a></li>
+                                <li><a href="#">Thanh toán linh hoạt</a></li>
+                                <li><a href="#">Cam kết giá rẻ nhất</a></li>
+                                <li><a href="#">Đặt lịch sửa online</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-footer" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="footer-payments">
+                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                        </ul>
+                        <span class="copyright">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Máy tính Hòa Phát - Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An. Uy tín sửa chữa & hỗ trợ kỹ thuật số 1.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Plugins -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var header = $("#header");
+            var stickyOffset = header.offset().top;
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > stickyOffset) {
+                    header.addClass("sticky-header");
+                } else {
+                    header.removeClass("sticky-header");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
