@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Máy tính Hòa Phát Yên Thành Nghệ An - Dịch vụ sửa chữa máy tính, hỗ trợ kỹ thuật phần cứng, phần mềm, máy in chuyên nghiệp. Uy tín, giá rẻ, bảo hành dài lâu.">
-    <meta name="keywords" content="sửa chữa máy tính Yên Thành, hỗ trợ kỹ thuật Yên Thành, sửa máy in, máy tính Hòa Phát, linh kiện máy tính Nghệ An">
-    <title>Dịch vụ Sửa chữa & Kỹ thuật - Máy tính Hòa Phát Yên Thành</title>
+    <meta name="description" content="Máy tính Hòa Phát Yên Thành Nghệ An - Dịch vụ lắp đặt camera an ninh, sửa chữa hệ thống camera chuyên nghiệp. Hỗ trợ kỹ thuật tận nơi, giá tốt, bảo hành dài lâu.">
+    <meta name="keywords" content="lắp đặt camera Yên Thành, sửa chữa camera Yên Thành, camera an ninh Hòa Phát, máy tính Hòa Phát, camera giám sát Nghệ An">
+    <title>Dịch vụ Camera An Ninh - Máy tính Hòa Phát Yên Thành</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -34,9 +34,10 @@
             --navy: #1a2c4e;
             --navy-light: #2a3f6e;
             --navy-lighter: #eef3fc;
+            --navy-soft: #e6edf6;
         }
-        .service-section-navy {
-            background: linear-gradient(135deg, #f4f9ff 0%, #e9f0fa 100%);
+        .camera-service-section {
+            background: linear-gradient(135deg, #f0f6fe 0%, #e8f0fa 100%);
             padding: 60px 0;
             border-top: 1px solid #cddfe7;
             border-bottom: 1px solid #cddfe7;
@@ -59,9 +60,9 @@
             height: 3px;
             background-color: var(--navy);
         }
-        .service-card-navy {
+        .camera-card {
             background: #fff;
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
             transition: all 0.3s ease;
@@ -70,12 +71,12 @@
             height: 100%;
             border: 1px solid #e2edf7;
         }
-        .service-card-navy:hover {
+        .camera-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 35px rgba(26,44,78,0.15);
             border-color: var(--navy-light);
         }
-        .service-icon-navy {
+        .camera-icon {
             font-size: 52px;
             color: var(--navy);
             margin-bottom: 20px;
@@ -86,32 +87,32 @@
             line-height: 90px;
             border-radius: 50%;
         }
-        .service-card-navy h4 {
+        .camera-card h4 {
             font-size: 22px;
             font-weight: 600;
             margin: 20px 0 12px;
             color: var(--navy);
         }
-        .service-card-navy p {
+        .camera-card p {
             color: #4a627a;
             font-size: 14px;
             line-height: 1.5;
             margin-bottom: 18px;
         }
-        .service-list-navy {
+        .feature-list {
             text-align: left;
             padding-left: 0;
             list-style: none;
             margin-top: 10px;
         }
-        .service-list-navy li {
+        .feature-list li {
             margin-bottom: 8px;
             position: relative;
             padding-left: 24px;
             font-size: 13px;
             color: #2c3e50;
         }
-        .service-list-navy li:before {
+        .feature-list li:before {
             content: "✔";
             color: var(--navy);
             font-weight: bold;
@@ -136,7 +137,7 @@
             color: #fff;
             transform: scale(1.02);
         }
-        .tech-badge-navy {
+        .tech-badge {
             background: var(--navy);
             color: #ffecb3;
             padding: 6px 16px;
@@ -146,7 +147,7 @@
             display: inline-block;
             margin-bottom: 20px;
         }
-        .support-box-navy {
+        .support-box {
             background: #ffffff;
             border-radius: 24px;
             padding: 35px;
@@ -154,13 +155,13 @@
             box-shadow: 0 12px 28px rgba(0,0,0,0.05);
             border: 1px solid #dce7f0;
         }
-        .why-item-navy {
+        .why-item {
             display: flex;
             align-items: center;
             gap: 14px;
             margin-bottom: 18px;
         }
-        .why-icon-navy {
+        .why-icon {
             background: var(--navy-lighter);
             width: 46px;
             height: 46px;
@@ -201,15 +202,14 @@
             border-left: 4px solid var(--navy);
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
-        /* Căn chỉnh bản đồ và Zalo */
-        .map-zalo-wrapper {
+        /* Map và Zalo style cân đối */
+        .contact-row {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            margin: 45px 0 20px;
         }
-        .map-card {
+        .info-card {
             flex: 1;
             min-width: 280px;
             background: #fff;
@@ -219,40 +219,37 @@
             transition: transform 0.3s ease;
             border: 1px solid #e9ecef;
         }
-        .map-card:hover {
+        .info-card:hover {
             transform: translateY(-5px);
         }
-        .map-card-header {
+        .card-header-nav {
             background: var(--navy);
             color: white;
             padding: 14px 20px;
             font-weight: 600;
             font-size: 18px;
         }
-        .map-card-header i {
-            margin-right: 10px;
-        }
-        .map-container {
+        .map-frame {
             width: 100%;
             height: 320px;
         }
-        .map-container iframe {
+        .map-frame iframe {
             width: 100%;
             height: 100%;
             border: 0;
         }
-        .zalo-container {
+        .zalo-inner {
             padding: 20px;
             text-align: center;
         }
-        .zalo-qr {
-            max-width: 180px;
+        .zalo-qr-code {
+            max-width: 170px;
             margin: 15px auto;
             display: block;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .zalo-button {
+        .zalo-btn {
             background: #0068ff;
             color: white;
             padding: 12px 20px;
@@ -265,18 +262,18 @@
             margin-top: 15px;
             transition: 0.3s;
         }
-        .zalo-button:hover {
+        .zalo-btn:hover {
             background: #0050cc;
             color: white;
         }
-        .address-info {
-            padding: 10px 20px 20px;
+        .address-detail {
+            padding: 12px 20px 20px;
             font-size: 14px;
             color: #4a5568;
             border-top: 1px solid #edf2f7;
         }
         @media (max-width: 768px) {
-            .map-zalo-wrapper {
+            .contact-row {
                 flex-direction: column;
             }
         }
@@ -291,7 +288,7 @@
                     <ul class="header-links pull-left">
                         <li><a href="tel:0337286632"><i class="fa fa-phone"></i> 0337286632</a></li>
                         <li><a href="mailto:thiennguyen.mark@gmail.com"><i class="fa fa-envelope-o"></i> thiennguyen.mark@gmail.com</a></li>
-                        <li><a href="https://www.facebook.com/profile.php?id=61584345367065" target="_blank"><i class="fa fa-map-marker"></i> Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
+                        <li><a href="https://share.google/Wa2H242jdTY1ezBwh" target="_blank"><i class="fa fa-map-marker"></i> Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
                     </ul>
                     <ul class="header-links pull-right">
                         <li>
@@ -355,144 +352,144 @@
     </header>
     <!-- /HEADER -->
 
-    <!-- DỊCH VỤ SỬA CHỮA & HỖ TRỢ KỸ THUẬT MÀU XANH NAVI -->
-    <section class="service-section-navy">
+    <!-- DỊCH VỤ CAMERA AN NINH - MÀU XANH NAVI -->
+    <section class="camera-service-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <span class="tech-badge-navy"><i class="fa fa-microchip"></i> KỸ THUẬT VIÊN LÀNH NGHỀ - BẢO HÀNH UY TÍN</span>
-                    <h2 class="section-title-navy">Dịch vụ sửa chữa & hỗ trợ kỹ thuật chuyên sâu</h2>
-                    <p class="lead" style="margin-bottom: 30px; color: #2c4c6e;">Máy tính Hòa Phát - Đối tác tin cậy cho mọi thiết bị số tại Yên Thành, Nghệ An</p>
+                    <span class="tech-badge"><i class="fa fa-shield"></i> AN NINH TỐI ƯU - GIÁM SÁT 24/7</span>
+                    <h2 class="section-title-navy">Lắp đặt & Sửa chữa Camera An Ninh Chuyên Nghiệp</h2>
+                    <p class="lead" style="margin-bottom: 30px; color: #2c4c6e;">Máy tính Hòa Phát - Đối tác tin cậy cho hệ thống camera giám sát tại Yên Thành, Nghệ An</p>
                 </div>
             </div>
 
-            <!-- Hình ảnh minh họa -->
+            <!-- Hình ảnh minh họa camera -->
             <div class="row" style="margin-bottom: 45px;">
                 <div class="col-md-6">
-                    <img src="./img/HT_MT.jpg" alt="Sửa chữa máy tính tại Yên Thành" class="img-illus">
+                    <img src="./img/camera.jpg" alt="Lắp đặt camera tại Yên Thành" class="img-illus">
                 </div>
                 <div class="col-md-6">
-                    <img src="./img/HT_MI.jpg" alt="Hỗ trợ kỹ thuật máy in Yên Thành" class="img-illus">
+                    <img src="./img/camera1.jpg" alt="Hệ thống camera giám sát Hòa Phát" class="img-illus">
                 </div>
             </div>
 
             <div class="row">
-                <!-- Sửa chữa phần cứng -->
+                <!-- Dịch vụ lắp đặt camera trọn gói -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="service-card-navy">
-                        <div class="service-icon-navy"><i class="fa fa-desktop"></i></div>
-                        <h4>Sửa chữa Phần cứng</h4>
-                        <p>Xử lý mọi sự cố về mainboard, nguồn, RAM, ổ cứng, card đồ họa. Thay thế linh kiện chính hãng, bảo hành dài lâu.</p>
-                        <ul class="service-list-navy">
-                            <li>Chẩn đoán lỗi không nguồn, treo máy, chết main</li>
-                            <li>Thay màn hình laptop, bàn phím, vỏ máy</li>
-                            <li>Vệ sinh máy tính, thay keo tản nhiệt định kỳ</li>
-                            <li>Nâng cấp SSD, RAM tăng tốc máy</li>
+                    <div class="camera-card">
+                        <div class="camera-icon"><i class="fa fa-video-camera"></i></div>
+                        <h4>Lắp đặt Camera Trọn gói</h4>
+                        <p>Khảo sát, tư vấn miễn phí, thi công chuyên nghiệp. Cung cấp giải pháp camera an ninh cho gia đình, cửa hàng, kho xưởng, trường học.</p>
+                        <ul class="feature-list">
+                            <li>Camera IP, Analog, không dây độ nét cao</li>
+                            <li>Lắp đặt đầu ghi hình, ổ cứng lưu trữ dài lâu</li>
+                            <li>Xem từ xa qua điện thoại, máy tính</li>
+                            <li>Dây dẫn chính hãng, đi dây thẩm mỹ</li>
                         </ul>
-                        <a href="tel:0337286632" class="btn-navy"><i class="fa fa-wrench"></i> Đặt lịch sửa ngay</a>
+                        <a href="tel:0337286632" class="btn-navy"><i class="fa fa-calendar-check-o"></i> Đặt lịch lắp đặt</a>
                     </div>
                 </div>
 
-                <!-- Hỗ trợ phần mềm -->
+                <!-- Sửa chữa & bảo trì camera -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="service-card-navy">
-                        <div class="service-icon-navy"><i class="fa fa-code"></i></div>
-                        <h4>Hỗ trợ Phần mềm</h4>
-                        <p>Khắc phục lỗi Windows, cài đặt driver, diệt virus, phục hồi dữ liệu, tối ưu hóa hiệu suất máy tính văn phòng & học tập.</p>
-                        <ul class="service-list-navy">
-                            <li>Cài Win, Office, phần mềm chuyên dụng</li>
-                            <li>Diệt virus mã độc, bảo mật dữ liệu</li>
-                            <li>Sửa lỗi mất kết nối mạng, lỗi xung đột phần mềm</li>
-                            <li>Phục hồi dữ liệu từ ổ cứng hỏng</li>
+                    <div class="camera-card">
+                        <div class="camera-icon"><i class="fa fa-wrench"></i></div>
+                        <h4>Sửa chữa & Bảo trì</h4>
+                        <p>Khắc phục mọi sự cố hệ thống camera: mất hình, nhiễu, lỗi đầu ghi, hỏng nguồn, hư hỏng do thời tiết. Đội ngũ kỹ thuật lành nghề.</p>
+                        <ul class="feature-list">
+                            <li>Sửa camera mất tín hiệu, mờ, tối hình</li>
+                            <li>Thay thế đầu ghi, ổ cứng, nguồn camera</li>
+                            <li>Nâng cấp phần mềm, cấu hình lại hệ thống</li>
+                            <li>Bảo trì định kỳ, vệ sinh camera</li>
                         </ul>
-                        <a href="tel:0337286632" class="btn-navy"><i class="fa fa-gears"></i> Tư vấn phần mềm</a>
+                        <a href="tel:0337286632" class="btn-navy"><i class="fa fa-phone-square"></i> Gọi sửa ngay</a>
                     </div>
                 </div>
 
-                <!-- Dịch vụ máy in -->
+                <!-- Camera thông minh & giải pháp -->
                 <div class="col-md-4 col-sm-6">
-                    <div class="service-card-navy">
-                        <div class="service-icon-navy"><i class="fa fa-print"></i></div>
-                        <h4>Máy in - Đổ mực & sửa chữa</h4>
-                        <p>Nhận sửa máy in laser, inkjet mọi thương hiệu: HP, Canon, Brother, Epson. Hỗ trợ cài đặt chia sẻ qua mạng.</p>
-                        <ul class="service-list-navy">
-                            <li>Sửa lỗi kẹt giấy, lỗi ống mực, lỗi đầu in</li>
-                            <li>Đổ mực chất lượng cao, thay hộp mực chính hãng</li>
-                            <li>Cấu hình máy in mạng, in qua WiFi, chia sẻ văn phòng</li>
-                            <li>Bảo trì, vệ sinh máy in định kỳ</li>
+                    <div class="camera-card">
+                        <div class="camera-icon"><i class="fa fa-microchip"></i></div>
+                        <h4>Camera AI Thông Minh</h4>
+                        <p>Tích hợp trí tuệ nhân tạo, cảnh báo chuyển động, nhận diện khuôn mặt. Giải pháp an ninh hiện đại cho mọi không gian.</p>
+                        <ul class="feature-list">
+                            <li>Camera 4K, xoay 360°, zoom quang học</li>
+                            <li>Cảnh báo đột nhập qua Zalo, điện thoại</li>
+                            <li>Nghe nói hai chiều qua camera</li>
+                            <li>Lưu trữ đám mây an toàn</li>
                         </ul>
-                        <a href="tel:0337286632" class="btn-navy"><i class="fa fa-calendar"></i> Bảo dưỡng ngay</a>
+                        <a href="https://zalo.me/0337286632" target="_blank" class="btn-navy"><i class="fa fa-commenting"></i> Tư vấn giải pháp</a>
                     </div>
                 </div>
             </div>
 
-            <!-- GOOGLE MAP VÀ ZALO NHÚNG - CÂN ĐỐI HOÀN HẢO -->
-            <div class="map-zalo-wrapper">
+            <!-- Google Maps Và Zalo Mapping Cân Đối -->
+            <div class="contact-row">
                 <!-- Google Maps Card -->
-                <div class="map-card">
-                    <div class="map-card-header">
-                        <i class="fa fa-map-marker"></i> Vị trí cửa hàng - Google Maps
+                <div class="info-card">
+                    <div class="card-header-nav">
+                        <i class="fa fa-map-marker"></i> Cửa hàng trên Google Maps
                     </div>
-                    <div class="map-container">
+                    <div class="map-frame">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.40140796569!2d105.4726182!3d19.0020257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313761004747b5bd%3A0x908167d138c22904!2zTcOheSBUw61uaCBIb8OgIFBow6F0!5e0!3m2!1svi!2s!4v1775119484371!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="address-info">
-                        <i class="fa fa-location-arrow" style="color:#1a2c4e;"></i> <strong>Địa chỉ thực tế:</strong> Đối diện THCS Phan Đăng Lưu, Khối 3, Yên Thành, Nghệ An<br>
-                        <i class="fa fa-clock-o"></i> <strong>Giờ mở cửa:</strong> 08:00 - 19:00 (Thứ 2 - Chủ nhật)<br>
-                        <a href="https://maps.app.goo.gl/LyhMHBcMZmrimKhC7" target="_blank" style="color:#1a2c4e; font-weight:500;">Xem chỉ đường trên Google Maps →</a>
+                    <div class="address-detail">
+                        <i class="fa fa-location-arrow" style="color:#1a2c4e;"></i> <strong>Địa chỉ chính xác:</strong> Đối diện THCS Phan Đăng Lưu, Khối 3, Yên Thành, Nghệ An<br>
+                        <i class="fa fa-clock-o"></i> <strong>Giờ hoạt động:</strong> 08:00 - 19:00 (Tất cả các ngày)<br>
+                        <a href="https://maps.app.goo.gl/LyhMHBcMZmrimKhC7" target="_blank" style="color:#1a2c4e; font-weight:500; margin-top:8px; display:inline-block;">Xem chỉ đường chi tiết →</a>
                     </div>
                 </div>
 
                 <!-- Zalo Official Card -->
-                <div class="map-card">
-                    <div class="map-card-header">
-                        <i class="fa fa-commenting"></i> Hỗ trợ qua Zalo Official
+                <div class="info-card">
+                    <div class="card-header-nav">
+                        <i class="fa fa-comment"></i> Hỗ trợ qua Zalo Official
                     </div>
-                    <div class="zalo-container">
-                        <img src="./img/QR_HOA_PHAT.jpg" alt="QR Zalo Máy Tính Hòa Phát" class="zalo-qr">
-                        <p style="margin: 10px 0 0; color:#2d3748;">Quét mã QR để chat Zalo <br> hoặc nhấn nút bên dưới</p>
-                        <a href="https://zalo.me/0337286632" target="_blank" class="zalo-button">
-                            <i class="fa fa-comment"></i> Nhắn tin qua Zalo
+                    <div class="zalo-inner">
+                        <img src="./img/QR_HOA_PHAT.jpg" alt="Mã QR Zalo Máy Tính Hòa Phát" class="zalo-qr-code">
+                        <p style="margin: 10px 0 0; color:#2d3748;">Quét mã QR để chat và nhận báo giá<br>hoặc nhấn nút bên dưới</p>
+                        <a href="https://zalo.me/0337286632" target="_blank" class="zalo-btn">
+                            <i class="fa fa-commenting"></i> Nhắn tin qua Zalo
                         </a>
-                        <div class="address-info" style="margin-top: 20px;">
+                        <div class="address-detail" style="margin-top: 20px;">
                             <i class="fa fa-phone"></i> <strong>Số Zalo / Điện thoại:</strong> 0337.286.632<br>
-                            <i class="fa fa-file-text-o"></i> Hỗ trợ tư vấn miễn phí, báo giá nhanh 24/7
+                            <i class="fa fa-file-text-o"></i> Tư vấn lắp đặt camera 24/7, báo giá nhanh
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Support box Kỹ thuật viên -->
+            <!-- Cam kết hỗ trợ kỹ thuật -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="support-box-navy">
+                    <div class="support-box">
                         <div class="row">
                             <div class="col-md-7">
-                                <h3 style="color:#1a2c4e; font-weight:700;"><i class="fa fa-shield-alt"></i> Kỹ thuật viên tay nghề cao – Hỗ trợ tận tâm tại Yên Thành</h3>
-                                <p style="font-size:16px;">Với hơn 8 năm kinh nghiệm trong lĩnh vực <strong>sửa chữa máy tính, hỗ trợ phần cứng & phần mềm, bảo trì máy in</strong>, Máy tính Hòa Phát tự hào là địa chỉ số 1 tại huyện Yên Thành. Chúng tôi cam kết:</p>
-                                <div class="why-item-navy">
-                                    <div class="why-icon-navy"><i class="fa fa-clock-o"></i></div>
-                                    <div><strong>Hỗ trợ nhanh chóng</strong> – Có mặt trong vòng 30 phút tại khu vực thị trấn và các xã lân cận.</div>
+                                <h3 style="color:#1a2c4e; font-weight:700;"><i class="fa fa-shield-alt"></i> Chuyên gia camera an ninh tại Yên Thành</h3>
+                                <p style="font-size:16px;">Với hơn 8 năm kinh nghiệm, Máy tính Hòa Phát tự hào là đơn vị hàng đầu trong <strong>lắp đặt và sửa chữa camera giám sát</strong> tại huyện Yên Thành và các xã lân cận. Chúng tôi cam kết:</p>
+                                <div class="why-item">
+                                    <div class="why-icon"><i class="fa fa-clock-o"></i></div>
+                                    <div><strong>Hỗ trợ nhanh chóng</strong> – Có mặt sau 30 phút gọi, sửa camera tận nơi.</div>
                                 </div>
-                                <div class="why-item-navy">
-                                    <div class="why-icon-navy"><i class="fa fa-credit-card-alt"></i></div>
-                                    <div><strong>Giá cả minh bạch</strong> – Báo giá trước khi sửa, không phát sinh chi phí.</div>
+                                <div class="why-item">
+                                    <div class="why-icon"><i class="fa fa-money"></i></div>
+                                    <div><strong>Giá cạnh tranh nhất</strong> – Báo giá minh bạch, không phát sinh chi phí.</div>
                                 </div>
-                                <div class="why-item-navy">
-                                    <div class="why-icon-navy"><i class="fa fa-check-square-o"></i></div>
-                                    <div><strong>Bảo hành dịch vụ lên đến 6 tháng</strong> – Yên tâm sử dụng lâu dài.</div>
+                                <div class="why-item">
+                                    <div class="why-icon"><i class="fa fa-check-circle"></i></div>
+                                    <div><strong>Bảo hành lên đến 12 tháng</strong> – Yên tâm về chất lượng hệ thống.</div>
                                 </div>
-                                <a href="https://www.facebook.com/profile.php?id=61584345367065" target="_blank" class="btn-navy" style="background:#1a2c4e; margin-right: 12px;"><i class="fa fa-facebook"></i> Chat qua Fanpage</a>
-                                <a href="https://zalo.me/0337286632" class="btn-navy" style="background:#2a5f8a;"><i class="fa fa-phone"></i> Gọi tư vấn: 0337.286.632</a>
+                                <a href="https://www.facebook.com/profile.php?id=61584345367065" target="_blank" class="btn-navy" style="background:#1a2c4e; margin-right: 12px;"><i class="fa fa-facebook"></i> Nhắn tin Fanpage</a>
+                                <a href="tel:0337286632" class="btn-navy" style="background:#2a5f8a;"><i class="fa fa-phone"></i> Gọi tư vấn: 0337.286.632</a>
                             </div>
                             <div class="col-md-5 text-center">
                                 <div style="background:#eef3fc; border-radius: 24px; padding: 20px;">
                                     <i class="fa fa-map-marker" style="font-size: 40px; color:#1a2c4e;"></i>
                                     <h4>Địa chỉ cửa hàng</h4>
-                                    <p><strong>Đối diện THCS Phan Đăng Lưu</strong><br>Khối 3, TT Yên Thành, Nghệ An</p>
+                                    <p><strong>Đối diện THCS Phan Đăng Lưu</strong><br>Xã Phúc Thành, Yên Thành, Nghệ An</p>
                                     <hr>
-                                    <i class="fa fa-clock-o"></i> Mở cửa: 7:30 - 20:00 (kể cả Chủ Nhật)<br>
-                                    <i class="fa fa-truck"></i> Hỗ trợ sửa chữa tận nơi
+                                    <i class="fa fa-clock-o"></i> Mở cửa: 7:30 - 20:00 (cả Chủ Nhật)<br>
+                                    <i class="fa fa-truck"></i> Lắp đặt camera tận nơi toàn huyện
                                 </div>
                             </div>
                         </div>
@@ -500,47 +497,66 @@
                 </div>
             </div>
 
-            <!-- Review & CTA cuối -->
+            <!-- Hình ảnh minh họa khác + feedback -->
             <div class="row" style="margin-top: 50px;">
                 <div class="col-md-6">
-                    <img src="./img/VGA_HT.jpg" alt="Đội ngũ kỹ thuật Hòa Phát Yên Thành" class="img-illus">
+                    <img src="./img/camera2.jpg" alt="Kỹ thuật viên camera Hòa Phát" class="img-illus">
                 </div>
                 <div class="col-md-6">
                     <div class="review-card">
                         <i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i>
-                        <p><em>"Anh kỹ thuật đến sửa máy tính tại nhà rất nhiệt tình, máy chạy ổn định lại như mới. Hỗ trợ cài win và phần mềm văn phòng nhanh chóng. Rất hài lòng!"</em></p>
-                        <strong>- Chị Mai, xã Hậu Thành</strong>
+                        <p><em>"Gia đình tôi đã lắp đặt camera tại Hòa Phát, anh em tư vấn tận tình, hình ảnh rõ nét ngay cả ban đêm. Xem qua điện thoại rất tiện. Sẽ giới thiệu cho hàng xóm!"</em></p>
+                        <strong>- Chị Lan, xã Bảo Thành</strong>
                     </div>
                     <div class="review-card" style="margin-top: 16px;">
                         <i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i>
-                        <p><em>"Máy in văn phòng bị lỗi không in, Hòa Phát sửa chỉ 20 phút xong, giá rẻ. Được hướng dẫn cách vệ sinh máy in định kỳ. Sẽ ủng hộ lâu dài."</em></p>
-                        <strong>- Anh Đức, TT Yên Thành</strong>
+                        <p><em>"Cửa hàng tôi bị mất camera sau bão, Hòa Phát đến sửa ngay trong ngày, giá hợp lý. Hệ thống giờ hoạt động ổn định, rất an tâm."</em></p>
+                        <strong>- Anh Dũng, xã Xuân Thành</strong>
                     </div>
-                    <div class="review-card" style="margin-top: 16px;">
+                   <div class="review-card" style="margin-top: 16px;">
                         <i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i>
-                        <p><em>"Máy in bị kẹt giấy liên tục, gọi Hòa Phát tới kiểm tra và sửa rất nhanh, chỉ khoảng 30 phút là hoạt động bình thường. Nhân viên nhiệt tình, còn hướng dẫn cách bảo dưỡng máy."</em></p>
-                        <strong>- Chị Sơn, xã Phúc Thành</strong>
+                        <p><em>"Camera nhà tôi bị lỗi không xem được từ xa, bên Hòa Phát kiểm tra và xử lý rất nhanh. Sau khi sửa xong xem lại rất rõ nét, hoạt động ổn định, tôi rất yên tâm."</em></p>
+                        <strong>- Chị Mai, Yên Thành</strong>
                     </div>
-
-                    <div class="review-card" style="margin-top: 16px;">
-                        <i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i><i class="fa fa-star" style="color: #f7b731;"></i>
-                        <p><em>"Dịch vụ sửa máy in rất uy tín, máy của công ty mình bị lỗi không kéo giấy, kỹ thuật xử lý nhanh gọn, chi phí hợp lý. Sẽ tiếp tục sử dụng dịch vụ khi cần."</em></p>
-                        <strong>- Chị Lan, Diễn Châu</strong>
-                    </div>
-                    </div>
+                </div>
             </div>
 
+            <!-- CTA cuối trang với hotline -->
             <div class="row text-center" style="margin-top: 50px;">
                 <div class="col-md-12">
                     <div style="background: #1a2c4e; padding: 30px 20px; border-radius: 60px; color: white;">
-                        <h3 style="color:#ffdd99; margin-bottom: 10px;">📢 Hotline hỗ trợ kỹ thuật 24/7: 0337.286.632</h3>
-                        <p>Đội ngũ kỹ thuật viên sẵn sàng giải đáp mọi vấn đề về máy tính, máy in và linh kiện. Miễn phí tư vấn từ xa!</p>
-                        <a href="tel:0337286632" style="background: white; color: #1a2c4e; padding: 10px 35px; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 12px; text-decoration: none;"><i class="fa fa-phone"></i> Gọi ngay để được hỗ trợ</a>
+                        <h3 style="color:#ffdd99; margin-bottom: 10px;">📢 Hotline lắp đặt & sửa chữa camera: 0337.286.632</h3>
+                        <p>Liên hệ ngay để được khảo sát miễn phí, báo giá tốt nhất thị trường. Bảo vệ tài sản của bạn ngay hôm nay!</p>
+                        <a href="tel:0337286632" style="background: white; color: #1a2c4e; padding: 10px 35px; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 12px; text-decoration: none;"><i class="fa fa-phone"></i> Gọi ngay để được tư vấn</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- NEWSLETTER -->
+    <div id="newsletter" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="newsletter">
+                        <p>Để lại thông tin Email chính thức với <strong>Máy tính Hòa Phát</strong></p>
+                        <form>
+                            <input class="input" type="email" placeholder="Nhập email của bạn">
+                            <button class="newsletter-btn"><i class="fa fa-envelope"></i> Gửi</button>
+                        </form>
+                        <ul class="newsletter-follow">
+                            <li><a href="https://www.facebook.com/profile.php?id=61584345367065"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /NEWSLETTER -->
 
     <!-- FOOTER -->
     <footer id="footer">
@@ -550,7 +566,7 @@
                     <div class="col-md-3 col-xs-6">
                         <div class="footer">
                             <h3 class="footer-title">Về Chúng Tôi</h3>
-                            <p>Máy Tính Hòa Phát – Uy tín tạo nên giá trị. Chuyên sửa chữa, bảo trì máy tính, hỗ trợ kỹ thuật phần cứng - phần mềm và máy in hàng đầu Yên Thành.</p>
+                            <p>Máy Tính Hòa Phát – Uy tín tạo nên giá trị. Chuyên cung cấp laptop, máy tính & dịch vụ lắp đặt camera, sửa chữa an ninh hàng đầu Yên Thành.</p>
                             <ul class="footer-links">
                                 <li><a href="#"><i class="fa fa-map-marker"></i>Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
                                 <li><a href="#"><i class="fa fa-phone"></i>0337286632</a></li>
@@ -563,10 +579,10 @@
                         <div class="footer">
                             <h3 class="footer-title">Danh mục sản phẩm</h3>
                             <ul class="footer-links">
-                                <li><a href="#">Laptop học tập</a></li>
-                                <li><a href="#">Máy tính để bàn</a></li>
-                                <li><a href="#">Camera giám sát</a></li>
-                                <li><a href="#">Máy in văn phòng</a></li>
+                                <li class="active"><a href="#laptop">Laptop học tập</a></li>
+                                <li><a href="#desktop">Máy tính để bàn</a></li>
+                                <li><a href="#camera">Camera giám sát</a></li>
+                                <li><a href="#printer">Máy in</a></li>
                             </ul>
                         </div>
                     </div>
@@ -575,24 +591,24 @@
 
                     <div class="col-md-3 col-xs-6">
                         <div class="footer">
-                            <h3 class="footer-title">Dịch vụ kỹ thuật</h3>
+                            <h3 class="footer-title">Dịch vụ Camera</h3>
                             <ul class="footer-links">
-                                <li><a href="#">Sửa chữa phần cứng máy tính</a></li>
-                                <li><a href="#">Hỗ trợ cài Win, phần mềm</a></li>
-                                <li><a href="#">Sửa máy in - đổ mực tận nơi</a></li>
-                                <li><a href="#">Nâng cấp máy tính văn phòng</a></li>
+                                <li><a href="#">Lắp đặt camera trọn gói</a></li>
+                                <li><a href="#">Sửa chữa camera tận nơi</a></li>
+                                <li><a href="#">Camera AI thông minh</a></li>
+                                <li><a href="#">Bảo trì hệ thống</a></li>
                             </ul>
                         </div>
                     </div>
                 
                     <div class="col-md-3 col-xs-6">
                         <div class="footer">
-                            <h3 class="footer-title">Chính sách</h3>
+                            <h3 class="footer-title">Thông Tin</h3>
                             <ul class="footer-links">
-                                <li><a href="#">Bảo hành dài lâu</a></li>
-                                <li><a href="#">Thanh toán linh hoạt</a></li>
-                                <li><a href="#">Cam kết giá rẻ nhất</a></li>
-                                <li><a href="#">Đặt lịch sửa online</a></li>
+                                <li><a href="#">Liên hệ chúng tôi</a></li>
+                                <li><a href="#">Chính sách bán hàng</a></li>
+                                <li><a href="#">Đặt Hàng và Thanh Toán</a></li>
+                                <li><a href="#">Hỗ trợ bảo hành</a></li>
                             </ul>
                         </div>
                     </div>
@@ -611,13 +627,14 @@
                             <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
                         </ul>
                         <span class="copyright">
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Máy tính Hòa Phát - Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An. Uy tín sửa chữa & hỗ trợ kỹ thuật số 1.
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Máy tính Hòa Phát - Đối diện THCS Phan Đăng Lưu Yên Thành, Nghệ An
                         </span>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- /FOOTER -->
 
     <!-- jQuery Plugins -->
     <script src="js/jquery.min.js"></script>
