@@ -1,1727 +1,2069 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Máy tính Hòa Phát - Yên Thành Nghệ An</title>
 
-		<title>Máy tính Hòa Phát - Yên Thành Nghệ An</title>
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+      rel="stylesheet"
+    />
 
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="icon" type="image/x-icon" href="img/lg_new.png" />
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-		<link rel="icon" type="image/x-icon" href="img/lg_new.png">
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
 
-		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
-		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
 
-		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
 
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
 
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <style>
+      /* Màu xanh navi chủ đạo */
+      :root {
+        --navy: #1a2c4e;
+        --navy-light: #2a3f6e;
+        --navy-lighter: #eef3fc;
+      }
+      /* Bài viết nổi bật */
+      .featured-articles {
+        background: #f8fafd;
+        padding: 50px 0;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .section-header-navy {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .section-header-navy h2 {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--navy);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 12px;
+      }
+      .section-header-navy h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--navy);
+      }
+      .article-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        margin-bottom: 30px;
+        height: 100%;
+      }
+      .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
+      .article-img {
+        height: 200px;
+        overflow: hidden;
+      }
+      .article-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .article-card:hover .article-img img {
+        transform: scale(1.05);
+      }
+      .article-content {
+        padding: 20px;
+      }
+      .article-tag {
+        display: inline-block;
+        background: var(--navy-lighter);
+        color: var(--navy);
+        font-size: 12px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+      .article-content h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #1e2a36;
+      }
+      .article-content p {
+        font-size: 14px;
+        color: #5a6e7c;
+        line-height: 1.5;
+        margin-bottom: 15px;
+      }
+      .read-more {
+        color: var(--navy);
+        font-weight: 600;
+        font-size: 13px;
+        text-decoration: none;
+      }
+      .read-more i {
+        transition: transform 0.2s;
+      }
+      .read-more:hover i {
+        transform: translateX(5px);
+      }
+      /* Map và Zalo section */
+      .contact-map-section {
+        padding: 50px 0;
+        background: #fff;
+        scroll-margin-top: 80px; /* tránh bị che bởi header fixed */
+      }
+      .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      .map-card,
+      .zalo-card {
+        flex: 1;
+        min-width: 280px;
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e9ecef;
+        transition: transform 0.3s;
+      }
+      .map-card:hover,
+      .zalo-card:hover {
+        transform: translateY(-5px);
+      }
+      .card-header {
+        background: var(--navy);
+        color: white;
+        padding: 15px 20px;
+        font-weight: 600;
+        font-size: 18px;
+      }
+      .map-container {
+        height: 320px;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .zalo-content {
+        padding: 25px;
+        text-align: center;
+      }
+      .zalo-qr {
+        max-width: 180px;
+        margin: 0 auto 15px;
+        display: block;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .zalo-btn {
+        background: #0068ff;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 15px;
+        transition: 0.3s;
+      }
+      .zalo-btn:hover {
+        background: #0050cc;
+        color: white;
+      }
+      .address-info {
+        padding: 15px 20px;
+        font-size: 14px;
+        color: #4a5568;
+        border-top: 1px solid #edf2f7;
+      }
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: white !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        animation: slideDown 0.35s ease;
+      }
+      /* ===== CẢI TIẾN TOP HEADER GIỐNG TRANG LIÊN HỆ ===== */
+      #top-header {
+        background: var(--navy); /* màu xanh chủ đạo */
+        color: #fff;
+        padding: 8px 0;
+        font-size: 13px;
+      }
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		
-		<style>
-        /* Màu xanh navi chủ đạo */
-        :root {
-            --navy: #1a2c4e;
-            --navy-light: #2a3f6e;
-            --navy-lighter: #eef3fc;
+      #top-header a {
+        color: #f0f4fa;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+
+      #top-header a:hover {
+        color: #f4b942; /* màu vàng làm điểm nhấn */
+      }
+
+      .top-header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .header-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .header-links li {
+        display: inline-block;
+      }
+
+      .header-links li a i {
+        margin-right: 5px;
+      }
+
+      .pull-left {
+        float: left;
+      }
+
+      .pull-right {
+        float: right;
+      }
+
+      /* Responsive: khi màn hình nhỏ hơn 768px thì xếp chồng */
+      @media (max-width: 768px) {
+        .top-header-wrapper {
+          flex-direction: column;
+          gap: 8px;
+          text-align: center;
         }
-        /* Bài viết nổi bật */
-        .featured-articles {
-            background: #f8fafd;
-            padding: 50px 0;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
+        .header-links {
+          justify-content: center;
         }
-        .section-header-navy {
-            text-align: center;
-            margin-bottom: 40px;
+        .pull-left,
+        .pull-right {
+          float: none;
         }
-        .section-header-navy h2 {
-            font-size: 30px;
-            font-weight: 700;
-            color: var(--navy);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 12px;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
         }
-        .section-header-navy h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--navy);
+        to {
+          transform: translateY(0);
         }
-        .article-card {
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        }
-        .article-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        .article-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
-        .article-card:hover .article-img img {
-            transform: scale(1.05);
-        }
-        .article-content {
-            padding: 20px;
-        }
-        .article-tag {
-            display: inline-block;
-            background: var(--navy-lighter);
-            color: var(--navy);
-            font-size: 12px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-        .article-content h4 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #1e2a36;
-        }
-        .article-content p {
-            font-size: 14px;
-            color: #5a6e7c;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-        .read-more {
-            color: var(--navy);
-            font-weight: 600;
-            font-size: 13px;
-            text-decoration: none;
-        }
-        .read-more i {
-            transition: transform 0.2s;
-        }
-        .read-more:hover i {
-            transform: translateX(5px);
-        }
-        /* Map và Zalo section */
-        .contact-map-section {
-            padding: 50px 0;
-            background: #fff;
-        }
+      }
+      #header {
+        transition: all 0.3s;
+        background: #fff;
+      }
+      @media (max-width: 768px) {
         .contact-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+          flex-direction: column;
         }
-        .map-card, .zalo-card {
-            flex: 1;
-            min-width: 280px;
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border: 1px solid #e9ecef;
-            transition: transform 0.3s;
-        }
-        .map-card:hover, .zalo-card:hover {
-            transform: translateY(-5px);
-        }
-        .card-header {
-            background: var(--navy);
-            color: white;
-            padding: 15px 20px;
-            font-weight: 600;
-            font-size: 18px;
-        }
-        .map-container {
-            height: 320px;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .zalo-content {
-            padding: 25px;
-            text-align: center;
-        }
-        .zalo-qr {
-            max-width: 180px;
-            margin: 0 auto 15px;
-            display: block;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .zalo-btn {
-            background: #0068ff;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-        .zalo-btn:hover {
-            background: #0050cc;
-            color: white;
-        }
-        .address-info {
-            padding: 15px 20px;
-            font-size: 14px;
-            color: #4a5568;
-            border-top: 1px solid #edf2f7;
-        }
-        .sticky-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: white !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            animation: slideDown 0.35s ease;
-        }
-        @keyframes slideDown {
-            from { transform: translateY(-100%);}
-            to {transform: translateY(0);}
-        }
-        #header {
-            transition: all 0.3s;
-            background: #fff;
-        }
-        @media (max-width: 768px) {
-            .contact-wrapper {
-                flex-direction: column;
-            }
-        }
+      }
     </style>
-    </head>
-	<body>
-		<!-- HEADER -->
-		<header id="site-header">
-			<div id="top-header">
-				<div class="container">
-					<div class="top-header-wrapper">
-						<ul class="header-links pull-left">
-							<li><a href="tel:0337286632"><i class="fa fa-phone"></i> 0337286632</a></li>
-							<li><a href="mailto:thiennguyen.mark@gmail.com"><i class="fa fa-envelope-o"></i> thiennguyen.mark@gmail.com</a></li>
-							<li><a href="https://share.google/Wa2H242jdTY1ezBwh"><i class="fa fa-map-marker"></i> Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
-						</ul>
-						<ul class="header-links pull-right">
-							<li>
-								<a href="https://www.facebook.com/profile.php?id=61584345367065" target="_blank" class="fb-link">
-									<i class="fa fa-facebook-square"></i> Fanpage Hòa Phát
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div id="header">
-				<div class="container">
-					<div class="row header-main-wrapper">
-						<div class="col-md-3 col-sm-4">
-							<div class="header-logo">
-								<a href="#" class="logo">
-									<img src="./img/hoaphat_mini_logo.jpg" alt="Máy Tính Hòa Phát">
-								</a>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-8">
-							<div class="header-search">
-								<form class="search-form-modern">
-									<div class="search-select-wrapper">
-										<select class="input-select">
-											<option value="0">Tất cả danh mục</option>
-											<option value="1">Laptop học tập</option>
-											<option value="2">Máy tính để bàn</option>
-											<option value="3">Máy in</option>
-											<option value="4">Camera giám sát</option>
-										</select>
-									</div>
-									<input class="input modern-input" placeholder="Tìm kiếm sản phẩm, linh kiện...">
-									<button type="button" class="search-btn-modern"><i class="fa fa-search"></i></button>
-								</form>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-12 clearfix">
-							<div class="header-ctn">
-								<div class="hotline-box">
-									<div class="hotline-icon">
-										<i class="fa fa-headphones"></i>
-									</div>
-									<div class="hotline-text">
-										<span>Tư vấn miễn phí</span>
-										<strong>0337.286.632</strong>
-									</div>
-								</div>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="site-header">
+      <div id="top-header">
+        <div class="container">
+          <div class="top-header-wrapper">
+            <ul class="header-links pull-left">
+              <li>
+                <a href="tel:0337286632"
+                  ><i class="fa fa-phone"></i> 0337286632</a
+                >
+              </li>
+              <li>
+                <a href="mailto:thiennguyen.mark@gmail.com"
+                  ><i class="fa fa-envelope-o"></i>
+                  thiennguyen.mark@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="https://share.google/Wa2H242jdTY1ezBwh"
+                  ><i class="fa fa-map-marker"></i> Đối diện THCS Phan Đăng Lưu,
+                  Yên Thành, Nghệ An</a
+                >
+              </li>
+            </ul>
+            <ul class="header-links pull-right">
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61584345367065"
+                  target="_blank"
+                  class="fb-link"
+                >
+                  <i class="fa fa-facebook-square"></i> Fanpage Hòa Phát
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="header">
+        <div class="container">
+          <div class="row header-main-wrapper">
+            <div class="col-md-3 col-sm-4">
+              <div class="header-logo">
+                <a href="#" class="logo">
+                  <img
+                    src="./img/hoaphat_mini_logo.jpg"
+                    alt="Máy Tính Hòa Phát"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-8">
+              <div class="header-search">
+                <form class="search-form-modern">
+                  <div class="search-select-wrapper">
+                    <select class="input-select">
+                      <option value="0">Tất cả danh mục</option>
+                      <option value="1">Laptop học tập</option>
+                      <option value="2">Máy tính để bàn</option>
+                      <option value="3">Máy in</option>
+                      <option value="4">Camera giám sát</option>
+                    </select>
+                  </div>
+                  <input
+                    class="input modern-input"
+                    placeholder="Tìm kiếm sản phẩm, linh kiện..."
+                  />
+                  <button type="button" class="search-btn-modern">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 clearfix">
+              <div class="header-ctn">
+                <div class="hotline-box">
+                  <div class="hotline-icon">
+                    <i class="fa fa-headphones"></i>
+                  </div>
+                  <div class="hotline-text">
+                    <span>Tư vấn miễn phí</span>
+                    <strong>0337.286.632</strong>
+                  </div>
+                </div>
+                <div class="menu-toggle">
+                  <a href="#">
+                    <i class="fa fa-bars"></i>
+                    <span>Menu</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /HEADER -->
 
-								<div class="menu-toggle">
-									<a href="#">
-										<i class="fa fa-bars"></i>
-										<span>Menu</span>
-									</a>
-								</div>
-								</div>
-						</div>
-						</div>
-				</div>
-			</div>
-		</header>
-		<!-- /HEADER -->
+    <!-- NAVIGATION -->
+    <nav id="navigation">
+      <div class="container">
+        <div id="responsive-nav">
+          <ul class="main-nav nav navbar-nav">
+            <li><a href="#navigation">Trang chủ</a></li>
+            <li><a href="#laptop">Laptop học tập</a></li>
+            <li><a href="#desktop">Máy tính để bàn</a></li>
+            <li><a href="#camera">Camera giám sát</a></li>
+            <li><a href="#printer">Máy in</a></li>
+            <!-- Thêm mục Liên hệ vào header navigation -->
+            <li><a href="./lien-he.html" target="_blank">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- /NAVIGATION -->
 
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li><a href="#navigation">Trang chủ</a></li>
-						<li><a href="#laptop">Laptop học tập</a></li>
-						<li><a href="#desktop">Máy tính để bàn</a></li>
-						<li><a href="#camera">Camera giám sát</a></li>
-						<li><a href="#printer">Máy in</a></li>
-					</ul>
-					<!-- /NAV -->
-				</div>
-				<!-- /responsive-nav -->
-			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
+    <!-- SECTION -->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-xs-6">
+            <div class="shop">
+              <div class="shop-img">
+                <img src="./img/laptop1.jpg" alt="" />
+              </div>
+              <div class="shop-body">
+                <h3>Laptop<br />Học Tập</h3>
+                <a href="#" class="cta-btn"
+                  >Tư vấn: 0337286632 <i class="fa fa-arrow-circle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6">
+            <div class="shop">
+              <div class="shop-img">
+                <img src="./img/may-tinh-de-ban.jpg" alt="" />
+              </div>
+              <div class="shop-body">
+                <h3>Máy Tính<br />Văn Phòng</h3>
+                <a href="#" class="cta-btn"
+                  >Tư vấn: 0337286632 <i class="fa fa-arrow-circle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6">
+            <div class="shop">
+              <div class="shop-img">
+                <img src="./img/camera.jpg" alt="" />
+              </div>
+              <div class="shop-body">
+                <h3>Camera<br />Giám sát</h3>
+                <a href="#" class="cta-btn"
+                  >Tư vấn: 0337286632 <i class="fa fa-arrow-circle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/laptop1.jpg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Laptop<br>Học Tập</h3>
-								<a href="#" class="cta-btn">Tư vấn: 0337286632 <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
+    <!-- SECTION PRODUCT NEW-->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h3 class="title">Sản phẩm mới</h3>
+              <div class="section-nav">
+                <ul class="section-tab-nav tab-nav">
+                  <li><a href="#navigation">Trang chủ</a></li>
+                  <li><a href="#laptop">Laptop học tập</a></li>
+                  <li><a href="#desktop">Máy tính để bàn</a></li>
+                  <li><a href="#camera">Camera giám sát</a></li>
+                  <li><a href="#printer">Máy in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab1" class="tab-pane active">
+                  <div class="products-slick" data-nav="#slick-nav-1">
+                    <!-- product -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/Dell_5490.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span>
+                          <span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Laptop Dell Latitude 5490</a>
+                        </h3>
+                        <h4 class="product-price">
+                          8.000.000 đ
+                          <del class="product-old-price">8.650.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <!-- /product -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/DELL_5300.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span>
+                          <span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Dell Latitude 5300</a>
+                        </h3>
+                        <h4 class="product-price">
+                          8.600.000 đ
+                          <del class="product-old-price">9.150.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-o"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <!-- /product -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/MacBook_Pro.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span>
+                          <span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Macbook Pro</a>
+                        </h3>
+                        <h4 class="product-price">
+                          9.100.000 đ
+                          <del class="product-old-price">9.650.000 đ</del>
+                        </h4>
+                        <div class="product-rating"></div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <!-- /product -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/MacBook_Air.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span>
+                          <span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Macbook Air</a>
+                        </h3>
+                        <h4 class="product-price">
+                          12.500.000 đ
+                          <del class="product-old-price">13.050.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <!-- /product -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/Laptop_Asus_Expertbook.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span>
+                          <span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Laptop Asus Expertbook</a>
+                        </h3>
+                        <h4 class="product-price">
+                          9.700.000 đ
+                          <del class="product-old-price">10.250.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <!-- /product -->
+                  </div>
+                  <div id="slick-nav-1" class="products-slick-nav"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/may-tinh-de-ban.jpg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Máy Tính<br>Văn Phòng</h3>
-								<a href="#" class="cta-btn">Tư vấn: 0337286632 <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
+    <!-- HOT DEAL SECTION -->
+    <div id="hot-deal" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="hot-deal">
+              <ul class="hot-deal-countdown">
+                <li>
+                  <div>
+                    <h3>02</h3>
+                    <span>Ngày</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3>10</h3>
+                    <span>Giờ</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3>34</h3>
+                    <span>Phút</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3>60</h3>
+                    <span>Giây</span>
+                  </div>
+                </li>
+              </ul>
+              <h2 class="text-uppercase">Chào mừng năm học mới</h2>
+              <p>Giảm 10% cho học sinh/ Sinh Viên</p>
+              <a class="primary-btn cta-btn" href="#">Mua ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/camera.jpg" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Camera<br>Giám sát</h3>
-								<a href="#" class="cta-btn">Tư vấn: 0337286632 <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+    <!-- SECTION LAPTOP-->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h3 id="laptop" class="title">Laptop học tập</h3>
+              <div class="section-nav">
+                <ul class="section-tab-nav tab-nav">
+                  <li><a href="#navigation">Trang chủ</a></li>
+                  <li><a href="#laptop">Laptop học tập</a></li>
+                  <li><a href="#desktop">Máy tính để bàn</a></li>
+                  <li><a href="#camera">Camera giám sát</a></li>
+                  <li><a href="#printer">Máy in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab2" class="tab-pane active">
+                  <div class="products-slick" data-nav="#slick-nav-2">
+                    <!-- product (giống các sản phẩm phía trên) -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/Dell_5490.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span
+                          ><span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Laptop Dell Latitude 5490</a>
+                        </h3>
+                        <h4 class="product-price">
+                          8.000.000 đ
+                          <del class="product-old-price">8.650.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/DELL_5300.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span
+                          ><span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Dell Latitude 5300</a>
+                        </h3>
+                        <h4 class="product-price">
+                          8.600.000 đ
+                          <del class="product-old-price">9.150.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star-o"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/MacBook_Pro.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span
+                          ><span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Macbook Pro</a>
+                        </h3>
+                        <h4 class="product-price">
+                          9.100.000 đ
+                          <del class="product-old-price">9.650.000 đ</del>
+                        </h4>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/MacBook_Air.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span
+                          ><span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Macbook Air</a>
+                        </h3>
+                        <h4 class="product-price">
+                          12.500.000 đ
+                          <del class="product-old-price">13.050.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/Laptop_Asus_Expertbook.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">1 đổi 1 - 7 ngày</span
+                          ><span class="new">Bảo hành 1 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Laptop học tập</p>
+                        <h3 class="product-name">
+                          <a href="#">Laptop Asus Expertbook</a>
+                        </h3>
+                        <h4 class="product-price">
+                          9.700.000 đ
+                          <del class="product-old-price">10.250.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="slick-nav-2" class="products-slick-nav"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<!-- SECTION PRODUCT NEW-->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
+    <!-- SECTION DESKTOP-->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h3 id="desktop" class="title">Máy tính để bàn</h3>
+              <div class="section-nav">
+                <ul class="section-tab-nav tab-nav">
+                  <li><a href="#navigation">Trang chủ</a></li>
+                  <li><a href="#laptop">Laptop học tập</a></li>
+                  <li><a href="#desktop">Máy tính để bàn</a></li>
+                  <li><a href="#camera">Camera giám sát</a></li>
+                  <li><a href="#printer">Máy in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab3" class="tab-pane fade in active">
+                  <div class="products-slick" data-nav="#slick-nav-3">
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/PC_Gamming.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy tính bàn</p>
+                        <h3 class="product-name">
+                          <a href="#">Bộ PC Gamming</a>
+                        </h3>
+                        <h4 class="product-price">
+                          10.500.000 đ<del class="product-old-price"
+                            >11.100.000 đ</del
+                          >
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/PC_Do_Hoa.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy tính bàn</p>
+                        <h3 class="product-name">
+                          <a href="#">Bộ PC Đồ Họa</a>
+                        </h3>
+                        <h4 class="product-price">
+                          17.500.000 đ<del class="product-old-price"
+                            >18.300.000 đ</del
+                          >
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/PC_Van_Phong.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy tính bàn</p>
+                        <h3 class="product-name">
+                          <a href="#">Bộ PC Học tập, Văn phòng</a>
+                        </h3>
+                        <h4 class="product-price">
+                          8.600.000 đ<del class="product-old-price"
+                            >9.100.000 đ</del
+                          >
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/may_in_2900.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy In</p>
+                        <h3 class="product-name">
+                          <a href="#">Máy in Canon LBP 2900</a>
+                        </h3>
+                        <h4 class="product-price">
+                          2.500.000 đ
+                          <del class="product-old-price">3.000.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/may_in_brother_2321D.JPG" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy In</p>
+                        <h3 class="product-name">
+                          <a href="#">Máy in Brother HL-L2321D</a>
+                        </h3>
+                        <h4 class="product-price">
+                          2.600.000 đ
+                          <del class="product-old-price">3.100.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="slick-nav-3" class="products-slick-nav"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					<!-- section title -->
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 class="title">Sản phẩm mới</h3>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li><a href="#navigation">Trang chủ</a></li>
-									<li><a href="#laptop">Laptop học tập</a></li>
-									<li><a href="#desktop">Máy tính để bàn</a></li>
-									<li><a href="#camera">Camera giám sát</a></li>
-									<li><a href="#printer">Máy in</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /section title -->
+    <!-- SECTION printer-->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h3 id="printer" class="title">Máy in</h3>
+              <div class="section-nav">
+                <ul class="section-tab-nav tab-nav">
+                  <li><a href="#navigation">Trang chủ</a></li>
+                  <li><a href="#laptop">Laptop học tập</a></li>
+                  <li><a href="#desktop">Máy tính để bàn</a></li>
+                  <li><a href="#camera">Camera giám sát</a></li>
+                  <li><a href="#printer">Máy in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab4" class="tab-pane fade in active">
+                  <div class="products-slick" data-nav="#slick-nav-4">
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/may_in_2900.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy In</p>
+                        <h3 class="product-name">
+                          <a href="#">Máy in Canon LBP 2900</a>
+                        </h3>
+                        <h4 class="product-price">
+                          2.500.000 đ
+                          <del class="product-old-price">3.000.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/lbp_6030.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy In</p>
+                        <h3 class="product-name">
+                          <a href="#">Máy in Canon LBP 6030</a>
+                        </h3>
+                        <h4 class="product-price">
+                          3.250.000 đ
+                          <del class="product-old-price">3.490.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/may_in_brother_2321D.JPG" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy In</p>
+                        <h3 class="product-name">
+                          <a href="#">Máy in Brother HL-L2321D</a>
+                        </h3>
+                        <h4 class="product-price">
+                          2.600.000 đ
+                          <del class="product-old-price">3.100.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="slick-nav-4" class="products-slick-nav"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab1" class="tab-pane active">
-									<div class="products-slick" data-nav="#slick-nav-1">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Dell_5490.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Laptop Dell Latitude 5490</a></h3>
-												<h4 class="product-price">8.000.000 đ <del class="product-old-price">8.650.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
+    <!-- SECTION camera-->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h3 id="camera" class="title">Camera giám sát</h3>
+              <div class="section-nav">
+                <ul class="section-tab-nav tab-nav">
+                  <li><a href="#navigation">Trang chủ</a></li>
+                  <li><a href="#laptop">Laptop học tập</a></li>
+                  <li><a href="#desktop">Máy tính để bàn</a></li>
+                  <li><a href="#camera">Camera giám sát</a></li>
+                  <li><a href="#printer">Máy in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab5" class="tab-pane fade in active">
+                  <div class="products-slick" data-nav="#slick-nav-5">
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/yoosee.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Bao lắp đặt</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Camera giám sát</p>
+                        <h3 class="product-name">
+                          <a href="#">Camera Yoosee</a>
+                        </h3>
+                        <h4 class="product-price">
+                          Liên hệ<del class="product-old-price"></del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/imou.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Bao lắp đặt</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Camera giám sát</p>
+                        <h3 class="product-name">
+                          <a href="#">Camera Imou</a>
+                        </h3>
+                        <h4 class="product-price">
+                          Liên hệ <del class="product-old-price"></del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star-o"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/ezviz.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Bao lắp đặt</span
+                          ><span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Camera giám sát</p>
+                        <h3 class="product-name">
+                          <a href="#">Camera Ezviz</a>
+                        </h3>
+                        <h4 class="product-price">
+                          Liên hệ <del class="product-old-price"></del>
+                        </h4>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp"
+                              >add to wishlist</span
+                            ></button
+                          ><button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp"
+                              >add to compare</span
+                            ></button
+                          ><button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="slick-nav-5" class="products-slick-nav"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/DELL_5300.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Dell Latitude 5300</a></h3>
-												<h4 class="product-price">8.600.000 đ <del class="product-old-price">9.150.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
+    <!-- ========== BÀI VIẾT NỔI BẬT MỚI ========== -->
+    <section id="articles" class="featured-articles">
+      <div class="container">
+        <div class="section-header-navy">
+          <h2>📰 BÀI VIẾT NỔI BẬT</h2>
+          <p style="color: #5a6e7c; margin-top: 10px">
+            Tin tức, kiến thức và dịch vụ mới nhất từ Máy tính Hòa Phát
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="article-card">
+              <div class="article-img">
+                <img
+                  src="./img/HT_MT.jpg"
+                  alt="Sửa chữa máy tính tại Yên Thành"
+                />
+              </div>
+              <div class="article-content">
+                <span class="article-tag"
+                  ><i class="fa fa-wrench"></i> Dịch vụ kỹ thuật</span
+                >
+                <h4>
+                  Máy Tính Hòa Phát – Dịch vụ sửa chữa & hỗ trợ kỹ thuật uy tín
+                  tại Yên Thành
+                </h4>
+                <p>
+                  Máy tính của bạn thường xuyên bị treo, chậm, hoặc không khởi
+                  động? Hãy để đội ngũ kỹ thuật viên Hòa Phát chia sẻ giải pháp
+                  tối ưu và dịch vụ sửa chữa tận nơi tại Yên Thành...
+                </p>
+                <a
+                  href="./dia-chi-mua-may-tinh-tai-yen-thanh-nghe-an.html"
+                  target="_blank"
+                  class="read-more"
+                  >Đọc tiếp <i class="fa fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="article-card">
+              <div class="article-img">
+                <img src="./img/camera.jpg" alt="Lắp đặt camera Yên Thành" />
+              </div>
+              <div class="article-content">
+                <span class="article-tag"
+                  ><i class="fa fa-video-camera"></i> Camera an ninh</span
+                >
+                <h4>
+                  Lợi ích vượt trội của hệ thống camera giám sát cho gia đình
+                </h4>
+                <p>
+                  Bảo vệ tài sản và người thân chưa bao giờ dễ dàng hơn. Tìm
+                  hiểu các giải pháp camera IP, không dây, xem từ xa qua điện
+                  thoại. Hòa Phát lắp đặt trọn gói, bảo hành dài lâu...
+                </p>
+                <a
+                  href="./lap-dat-camera-tai-yen-thanh.html"
+                  target="_blank"
+                  class="read-more"
+                  >Đọc tiếp <i class="fa fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="article-card">
+              <div class="article-img">
+                <img
+                  src="./img/may_in_brother_2321D.JPG"
+                  alt="Sửa máy in tại Yên Thành"
+                />
+              </div>
+              <div class="article-content">
+                <span class="article-tag"
+                  ><i class="fa fa-print"></i> Máy in - Văn phòng</span
+                >
+                <h4>
+                  Máy in bị kẹt giấy, lỗi mạng? Xử lý ngay với kỹ thuật viên Hòa
+                  Phát
+                </h4>
+                <p>
+                  Máy in văn phòng gặp sự cố gây gián đoạn công việc. Đội ngũ
+                  Hòa Phát hỗ trợ sửa chữa, đổ mực, cài đặt chia sẻ mạng nhanh
+                  chóng, giá tốt nhất Yên Thành...
+                </p>
+                <a
+                  href="./sua-chua-may-tinh-tai-yen-thanh.html"
+                  target="_blank"
+                  class="read-more"
+                  >Đọc tiếp <i class="fa fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/MacBook_Pro.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Macbook Pro</a></h3>
-												<h4 class="product-price">9.100.000 đ <del class="product-old-price">9.650.000 đ</del></h4>
-												<div class="product-rating">
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
+    <!-- ========== GOOGLE MAP VÀ ZALO NHÚNG (ĐÃ GÁN ID LIÊN HỆ) ========== -->
+    <section id="lienhe" class="contact-map-section">
+      <div class="container">
+        <div class="section-header-navy">
+          <h2>📍 BẢN ĐỒ & LIÊN HỆ</h2>
+          <p>
+            Ghé thăm cửa hàng hoặc liên hệ qua Zalo để được tư vấn nhanh nhất
+          </p>
+        </div>
+        <div class="contact-wrapper">
+          <div class="map-card">
+            <div class="card-header">
+              <i class="fa fa-map-marker"></i> Vị trí trên Google Maps
+            </div>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.40140796569!2d105.4726182!3d19.0020257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313761004747b5bd%3A0x908167d138c22904!2zTcOheSBUw61uaCBIb8OgIFBow6F0!5e0!3m2!1svi!2s!4v1775119484371!5m2!1svi!2s"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="address-info">
+              <i class="fa fa-location-arrow" style="color: #1a2c4e"></i>
+              <strong>Địa chỉ:</strong> Đối diện THCS Phan Đăng Lưu, Khối 3, Yên
+              Thành, Nghệ An<br />
+              <i class="fa fa-clock-o"></i> <strong>Giờ mở cửa:</strong> 08:00 -
+              19:00 (Tất cả các ngày)<br />
+              <a
+                href="https://maps.app.goo.gl/LyhMHBcMZmrimKhC7"
+                target="_blank"
+                style="
+                  color: #1a2c4e;
+                  font-weight: 500;
+                  margin-top: 8px;
+                  display: inline-block;
+                "
+                >Xem chỉ đường chi tiết →</a
+              >
+            </div>
+          </div>
+          <div class="zalo-card">
+            <div class="card-header">
+              <i class="fa fa-commenting"></i> Kết nối qua Zalo
+            </div>
+            <div class="zalo-content">
+              <img
+                src="./img/QR_HOA_PHAT.jpg"
+                alt="Mã QR Zalo Máy Tính Hòa Phát"
+                class="zalo-qr"
+              />
+              <p style="margin: 10px 0 0; color: #2d3748">
+                Quét mã QR để chat và nhận báo giá nhanh<br />hoặc nhấn nút bên
+                dưới
+              </p>
+              <a
+                href="https://zalo.me/0337286632"
+                target="_blank"
+                class="zalo-btn"
+                ><i class="fa fa-comment"></i> Nhắn tin qua Zalo</a
+              >
+              <div class="address-info" style="margin-top: 20px">
+                <i class="fa fa-phone"></i>
+                <strong>Số Zalo / Hotline:</strong> 0337.286.632<br />
+                <i class="fa fa-file-text-o"></i> Tư vấn sửa chữa, lắp đặt
+                camera 24/7
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/MacBook_Air.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Macbook Air</a></h3>
-												<h4 class="product-price">12.500.000 đ <del class="product-old-price">13.050.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
+    <!-- SECTION PRODUCT HOT-->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-xs-6">
+            <div class="section-title">
+              <h4 class="title">Top bán chạy</h4>
+              <div class="section-nav">
+                <div id="slick-nav-3" class="products-slick-nav"></div>
+              </div>
+            </div>
+            <div class="products-widget-slick" data-nav="#slick-nav-3">
+              <div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/dell_e6540.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Laptop</p>
+                    <h3 class="product-name"><a href="#">Dell E6540</a></h3>
+                  </div>
+                </div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/dell_e7280.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Laptop</p>
+                    <h3 class="product-name"><a href="#">Dell E7280</a></h3>
+                  </div>
+                </div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/dell_5510.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Laptop</p>
+                    <h3 class="product-name"><a href="#">Dell 5510</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6">
+            <div class="section-title">
+              <h4 class="title">Top bán chạy</h4>
+              <div class="section-nav">
+                <div id="slick-nav-4" class="products-slick-nav"></div>
+              </div>
+            </div>
+            <div class="products-widget-slick" data-nav="#slick-nav-4">
+              <div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/dell_3060.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Máy bàn</p>
+                    <h3 class="product-name"><a href="#">Dell 3060</a></h3>
+                  </div>
+                </div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/dell_3070.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Máy bàn</p>
+                    <h3 class="product-name"><a href="#">Dell 3070</a></h3>
+                  </div>
+                </div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/dell_5070.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Máy bàn</p>
+                    <h3 class="product-name"><a href="#">Dell 5070</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix visible-sm visible-xs"></div>
+          <div class="col-md-4 col-xs-6">
+            <div class="section-title">
+              <h4 class="title">Mua nhiều</h4>
+              <div class="section-nav">
+                <div id="slick-nav-5" class="products-slick-nav"></div>
+              </div>
+            </div>
+            <div class="products-widget-slick" data-nav="#slick-nav-5">
+              <div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/yoosee.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Camera</p>
+                    <h3 class="product-name"><a href="#">Camera Yoosee</a></h3>
+                  </div>
+                </div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/imou.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Camera</p>
+                    <h3 class="product-name"><a href="#">Camera Imou</a></h3>
+                  </div>
+                </div>
+                <div class="product-widget">
+                  <div class="product-img">
+                    <img src="./img/ezviz.jpg" alt="" />
+                  </div>
+                  <div class="product-body">
+                    <p class="product-category">Camera</p>
+                    <h3 class="product-name"><a href="#">Camera Ezviz</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Laptop_Asus_Expertbook.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Laptop Asus Expertbook</a></h3>
-												<h4 class="product-price">9.700.000 đ <del class="product-old-price">10.250.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-1" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- Products tab & slick -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+    <!-- NEWSLETTER -->
+    <div id="newsletter" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="newsletter">
+              <p>
+                Để lại thông tin Email chính thức với
+                <strong>Máy tính Hòa Phát</strong>
+              </p>
+              <form>
+                <input
+                  class="input"
+                  type="email"
+                  placeholder="Nhập email của bạn"
+                /><button class="newsletter-btn">
+                  <i class="fa fa-envelope"></i> Gửi
+                </button>
+              </form>
+              <ul class="newsletter-follow">
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61584345367065"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-pinterest"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<!-- HOT DEAL SECTION -->
-		<div id="hot-deal" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="hot-deal">
-							<ul class="hot-deal-countdown">
-								<li>
-									<div>
-										<h3>02</h3>
-										<span>Ngày</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>10</h3>
-										<span>Giờ</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>34</h3>
-										<span>Phút</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>60</h3>
-										<span>Giây</span>
-									</div>
-								</li>
-							</ul>
-							<h2 class="text-uppercase">Chào mừng năm học mới</h2>
-							<p>Giảm 10% cho học sinh/ Sinh Viên</p>
-							<a class="primary-btn cta-btn" href="#">Mua ngay</a>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /HOT DEAL SECTION -->
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-xs-6">
+              <div class="footer">
+                <h3 class="footer-title">Về Chúng Tôi</h3>
+                <p>
+                  Máy Tính Hòa Phát – Uy tín tạo nên giá trị. Chuyên cung cấp
+                  laptop và máy tính chất lượng cho học tập – văn phòng. Bảo
+                  hành chu đáo, hỗ trợ tận tâm, giá cả phù hợp mọi gia đình tại
+                  Yên Thành.
+                </p>
+                <ul class="footer-links">
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-map-marker"></i>Đối diện THCS Phan Đăng
+                      Lưu, Yên Thành, Nghệ An</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-phone"></i>0337286632</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-envelope-o"></i
+                      >thiennguyen.mark@gmail.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+              <div class="footer">
+                <h3 class="footer-title">Danh mục sản phẩm</h3>
+                <ul class="footer-links">
+                  <li class="active"><a href="#laptop">Laptop học tập</a></li>
+                  <li><a href="#desktop">Máy tính để bàn</a></li>
+                  <li><a href="#camera">Camera giám sát</a></li>
+                  <li><a href="#printer">Máy in</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="clearfix visible-xs"></div>
+            <div class="col-md-3 col-xs-6">
+              <div class="footer">
+                <h3 class="footer-title">Thông Tin</h3>
+                <ul class="footer-links">
+                  <li><a href="#lienhe">Liên hệ chúng tôi</a></li>
+                  <li><a href="#">Chính sách bán hàng</a></li>
+                  <li><a href="#">Đặt Hàng và Thanh Toán</a></li>
+                  <li><a href="#">Hỗ trợ bảo hành</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="bottom-footer" class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <ul class="footer-payments">
+                <li>
+                  <a href="#"><i class="fa fa-cc-visa"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-credit-card"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-cc-paypal"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-cc-mastercard"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-cc-discover"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-cc-amex"></i></a>
+                </li>
+              </ul>
+              <span class="copyright"
+                >Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                Máy tính Hòa Phát - C2 Phan Đăng Lưu Yên Thành, Nghệ An</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-		<!-- SECTION LAPTOP-->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-
-					<!-- section title -->
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 id="laptop" class="title">Laptop học tập</h3>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li><a href="#navigation">Trang chủ</a></li>
-									<li><a href="#laptop">Laptop học tập</a></li>
-									<li><a href="#desktop">Máy tính để bàn</a></li>
-									<li><a href="#camera">Camera giám sát</a></li>
-									<li><a href="#printer">Máy in</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /section title -->
-
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab2" class="tab-pane active">
-									<div class="products-slick" data-nav="#slick-nav-2">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Dell_5490.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Laptop Dell Latitude 5490</a></h3>
-												<h4 class="product-price">8.000.000 đ <del class="product-old-price">8.650.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/DELL_5300.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Dell Latitude 5300</a></h3>
-												<h4 class="product-price">8.600.000 đ <del class="product-old-price">9.150.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/MacBook_Pro.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Macbook Pro</a></h3>
-												<h4 class="product-price">9.100.000 đ <del class="product-old-price">9.650.000 đ</del></h4>
-												<div class="product-rating">
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/MacBook_Air.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Macbook Air</a></h3>
-												<h4 class="product-price">12.500.000 đ <del class="product-old-price">13.050.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/Laptop_Asus_Expertbook.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">1 đổi 1 - 7 ngày</span>
-													<span class="new">Bảo hành 1 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Laptop học tập</p>
-												<h3 class="product-name"><a href="#">Laptop Asus Expertbook</a></h3>
-												<h4 class="product-price">9.700.000 đ <del class="product-old-price">10.250.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-2" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- Products tab & slick -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-
-		<!-- SECTION DESKTOP-->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-
-					<!-- section title -->
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 id="desktop" class="title">Máy tính để bàn</h3>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li><a href="#navigation">Trang chủ</a></li>
-									<li><a href="#laptop">Laptop học tập</a></li>
-									<li><a href="#desktop">Máy tính để bàn</a></li>
-									<li><a href="#camera">Camera giám sát</a></li>
-									<li><a href="#printer">Máy in</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /section title -->
-
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab3" class="tab-pane fade in active">
-									<div class="products-slick" data-nav="#slick-nav-3">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/PC_Gamming.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Lắp đặt tận nhà</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Máy tính bàn</p>
-												<h3 class="product-name"><a href="#">Bộ PC Gamming</a></h3>
-												<h4 class="product-price">10.500.000 đ<del class="product-old-price">11.100.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/PC_Do_Hoa.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Lắp đặt tận nhà</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Máy tính bàn</p>
-												<h3 class="product-name"><a href="#">Bộ PC Đồ Họa</a></h3>
-												<h4 class="product-price">17.500.000 đ<del class="product-old-price">18.300.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/PC_Van_Phong.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Lắp đặt tận nhà</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Máy tính bàn</p>
-												<h3 class="product-name"><a href="#">Bộ PC Học tập, Văn phòng</a></h3>
-												<h4 class="product-price">8.600.000 đ<del class="product-old-price">9.100.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/may_in_2900.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Lắp đặt tận nhà</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Máy In</p>
-												<h3 class="product-name"><a href="#">Máy in Canon LBP 2900</a></h3>
-												<h4 class="product-price">2.500.000 đ <del class="product-old-price">3.000.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/may_in_brother_2321D.JPG" alt="">
-												<div class="product-label">
-													<span class="sale">Lắp đặt tận nhà</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Máy In</p>
-												<h3 class="product-name"><a href="#">Máy in Brother HL-L2321D</a></h3>
-												<h4 class="product-price">2.600.000 đ <del class="product-old-price">3.100.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-3" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- /Products tab & slick -->
-				</div>
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-
-		<!-- SECTION printer-->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-
-					<!-- section title -->
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 id="printer" class="title">Máy in</h3>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li><a href="#navigation">Trang chủ</a></li>
-									<li><a href="#laptop">Laptop học tập</a></li>
-									<li><a href="#desktop">Máy tính để bàn</a></li>
-									<li><a href="#camera">Camera giám sát</a></li>
-									<li><a href="#printer">Máy in</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /section title -->
-
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab4" class="tab-pane fade in active">
-									<div class="products-slick" data-nav="#slick-nav-4">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/may_in_2900.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Lắp đặt tận nhà</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Máy In</p>
-												<h3 class="product-name"><a href="#">Máy in Canon LBP 2900</a></h3>
-												<h4 class="product-price">2.500.000 đ <del class="product-old-price">3.000.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/lbp_6030.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Lắp đặt tận nhà</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Máy In</p>
-												<h3 class="product-name"><a href="#">Máy in Canon LBP 6030</a></h3>
-												<h4 class="product-price">3.250.000 đ <del class="product-old-price">3.490.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/may_in_brother_2321D.JPG" alt="">
-												<div class="product-label">
-													<span class="sale">Lắp đặt tận nhà</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Máy In</p>
-												<h3 class="product-name"><a href="#">Máy in Brother HL-L2321D</a></h3>
-												<h4 class="product-price">2.600.000 đ <del class="product-old-price">3.100.000 đ</del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-4" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- /Products tab & slick -->
-				</div>
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-
-		<!-- SECTION camera-->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-
-					<!-- section title -->
-					<div class="col-md-12">
-						<div class="section-title">
-							<h3 id="camera" class="title">Camera giám sát</h3>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li><a href="#navigation">Trang chủ</a></li>
-									<li><a href="#laptop">Laptop học tập</a></li>
-									<li><a href="#desktop">Máy tính để bàn</a></li>
-									<li><a href="#camera">Camera giám sát</a></li>
-									<li><a href="#printer">Máy in</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /section title -->
-
-					<!-- Products tab & slick -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab5" class="tab-pane fade in active">
-									<div class="products-slick" data-nav="#slick-nav-5">
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/yoosee.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Bao lắp đặt</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Camera giám sát</p>
-												<h3 class="product-name"><a href="#">Camera Yoosee</a></h3>
-												<h4 class="product-price">Liên hệ<del class="product-old-price"></del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/imou.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Bao lắp đặt</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Camera giám sát</p>
-												<h3 class="product-name"><a href="#">Camera Imou</a></h3>
-												<h4 class="product-price">Liên hệ <del class="product-old-price"></del></h4>
-												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-
-										<!-- product -->
-										<div class="product">
-											<div class="product-img">
-												<img src="./img/ezviz.jpg" alt="">
-												<div class="product-label">
-													<span class="sale">Bao lắp đặt</span>
-													<span class="new">Bảo hành 2 năm</span>
-												</div>
-											</div>
-											<div class="product-body">
-												<p class="product-category">Camera giám sát</p>
-												<h3 class="product-name"><a href="#">Camera Ezviz</a></h3>
-												<h4 class="product-price">Liên hệ <del class="product-old-price"></del></h4>
-												<div class="product-rating">
-												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-												</div>
-											</div>
-											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Liên hệ</button>
-											</div>
-										</div>
-										<!-- /product -->
-									</div>
-									<div id="slick-nav-5" class="products-slick-nav"></div>
-								</div>
-								<!-- /tab -->
-							</div>
-						</div>
-					</div>
-					<!-- /Products tab & slick -->
-				</div>
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-		 
-	<!-- ========== BÀI VIẾT NỔI BẬT MỚI ========== -->
-		<section id="articles" class="featured-articles">
-			<div class="container">
-				<div class="section-header-navy">
-					<h2>📰 BÀI VIẾT NỔI BẬT</h2>
-					<p style="color:#5a6e7c; margin-top:10px;">Tin tức, kiến thức và dịch vụ mới nhất từ Máy tính Hòa Phát</p>
-				</div>
-				<div class="row">
-					<!-- Bài viết 1: Sửa chữa máy tính -->
-					<div class="col-md-4 col-sm-6">
-						<div class="article-card">
-							<div class="article-img">
-								<img src="./img/HT_MT.jpg" alt="Sửa chữa máy tính tại Yên Thành">
-							</div>
-							<div class="article-content">
-								<span class="article-tag"><i class="fa fa-wrench"></i> Dịch vụ kỹ thuật</span>
-								<h4>Máy Tính Hòa Phát – Dịch vụ sửa chữa & hỗ trợ kỹ thuật uy tín tại Yên Thành</h4>
-								<p>Máy tính của bạn thường xuyên bị treo, chậm, hoặc không khởi động? Hãy để đội ngũ kỹ thuật viên Hòa Phát chia sẻ giải pháp tối ưu và dịch vụ sửa chữa tận nơi tại Yên Thành...</p>
-								<a href="./dia-chi-mua-may-tinh-tai-yen-thanh-nghe-an.html" target="_blank" class="read-more">Đọc tiếp <i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- Bài viết 2: Lắp đặt camera -->
-					<div class="col-md-4 col-sm-6">
-						<div class="article-card">
-							<div class="article-img">
-								<img src="./img/camera.jpg" alt="Lắp đặt camera Yên Thành">
-							</div>
-							<div class="article-content">
-								<span class="article-tag"><i class="fa fa-video-camera"></i> Camera an ninh</span>
-								<h4>Lợi ích vượt trội của hệ thống camera giám sát cho gia đình</h4>
-								<p>Bảo vệ tài sản và người thân chưa bao giờ dễ dàng hơn. Tìm hiểu các giải pháp camera IP, không dây, xem từ xa qua điện thoại. Hòa Phát lắp đặt trọn gói, bảo hành dài lâu...</p>
-								<a href="./lap-dat-camera-tai-yen-thanh.html" target="_blank" class="read-more">Đọc tiếp <i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- Bài viết 3: Hỗ trợ kỹ thuật máy in -->
-					<div class="col-md-4 col-sm-6">
-						<div class="article-card">
-							<div class="article-img">
-								<img src="./img/may_in_brother_2321D.JPG" alt="Sửa máy in tại Yên Thành">
-							</div>
-							<div class="article-content">
-								<span class="article-tag"><i class="fa fa-print"></i> Máy in - Văn phòng</span>
-								<h4>Máy in bị kẹt giấy, lỗi mạng? Xử lý ngay với kỹ thuật viên Hòa Phát</h4>
-								<p>Máy in văn phòng gặp sự cố gây gián đoạn công việc. Đội ngũ Hòa Phát hỗ trợ sửa chữa, đổ mực, cài đặt chia sẻ mạng nhanh chóng, giá tốt nhất Yên Thành...</p>
-								<a href="./sua-chua-may-tinh-tai-yen-thanh.html" target="_blank" class="read-more">Đọc tiếp <i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- ========== GOOGLE MAP VÀ ZALO NHÚNG (CÂN ĐỐI) ========== -->
-		<section class="contact-map-section">
-			<div class="container">
-				<div class="section-header-navy">
-					<h2>📍 BẢN ĐỒ & LIÊN HỆ</h2>
-					<p>Ghé thăm cửa hàng hoặc liên hệ qua Zalo để được tư vấn nhanh nhất</p>
-				</div>
-				<div class="contact-wrapper">
-					<!-- Google Maps Card -->
-					<div class="map-card">
-						<div class="card-header">
-							<i class="fa fa-map-marker"></i> Vị trí trên Google Maps
-						</div>
-						<div class="map-container">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.40140796569!2d105.4726182!3d19.0020257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313761004747b5bd%3A0x908167d138c22904!2zTcOheSBUw61uaCBIb8OgIFBow6F0!5e0!3m2!1svi!2s!4v1775119484371!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-						</div>
-						<div class="address-info">
-							<i class="fa fa-location-arrow" style="color:#1a2c4e;"></i> <strong>Địa chỉ:</strong> Đối diện THCS Phan Đăng Lưu, Khối 3, Yên Thành, Nghệ An<br>
-							<i class="fa fa-clock-o"></i> <strong>Giờ mở cửa:</strong> 08:00 - 19:00 (Tất cả các ngày)<br>
-							<a href="https://maps.app.goo.gl/LyhMHBcMZmrimKhC7" target="_blank" style="color:#1a2c4e; font-weight:500; margin-top:8px; display:inline-block;">Xem chỉ đường chi tiết →</a>
-						</div>
-					</div>
-
-					<!-- Zalo Official Card -->
-					<div class="zalo-card">
-						<div class="card-header">
-							<i class="fa fa-commenting"></i> Kết nối qua Zalo
-						</div>
-						<div class="zalo-content">
-							<img src="./img/QR_HOA_PHAT.jpg" alt="Mã QR Zalo Máy Tính Hòa Phát" class="zalo-qr">
-							<p style="margin: 10px 0 0; color:#2d3748;">Quét mã QR để chat và nhận báo giá nhanh<br>hoặc nhấn nút bên dưới</p>
-							<a href="https://zalo.me/0337286632" target="_blank" class="zalo-btn">
-								<i class="fa fa-comment"></i> Nhắn tin qua Zalo
-							</a>
-							<div class="address-info" style="margin-top: 20px;">
-								<i class="fa fa-phone"></i> <strong>Số Zalo / Hotline:</strong> 0337.286.632<br>
-								<i class="fa fa-file-text-o"></i> Tư vấn sửa chữa, lắp đặt camera 24/7
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION PRODUCT HOT-->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-4 col-xs-6">
-						<div class="section-title">
-							<h4 class="title">Top bán chạy</h4>
-							<div class="section-nav">
-								<div id="slick-nav-3" class="products-slick-nav"></div>
-							</div>
-						</div>
-
-						<div class="products-widget-slick" data-nav="#slick-nav-3">
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/dell_e6540.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Laptop</p>
-										<h3 class="product-name"><a href="#">Dell E6540</a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/dell_e7280.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Laptop</p>
-										<h3 class="product-name"><a href="#">Dell E7280</a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/dell_5510.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Laptop</p>
-										<h3 class="product-name"><a href="#">Dell 5510</a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 col-xs-6">
-						<div class="section-title">
-							<h4 class="title">Top bán chạy</h4>
-							<div class="section-nav">
-								<div id="slick-nav-4" class="products-slick-nav"></div>
-							</div>
-						</div>
-
-						<div class="products-widget-slick" data-nav="#slick-nav-4">
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/dell_3060.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Máy bàn</p>
-										<h3 class="product-name"><a href="#">Dell 3060</a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/dell_3070.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Máy bàn</p>
-										<h3 class="product-name"><a href="#">Dell 3070</a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/dell_5070.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Máy bàn</p>
-										<h3 class="product-name"><a href="#">Dell 5070</a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
-						</div>
-					</div>
-
-					<div class="clearfix visible-sm visible-xs"></div>
-
-					<div class="col-md-4 col-xs-6">
-						<div class="section-title">
-							<h4 class="title">Mua nhiều</h4>
-							<div class="section-nav">
-								<div id="slick-nav-5" class="products-slick-nav"></div>
-							</div>
-						</div>
-
-						<div class="products-widget-slick" data-nav="#slick-nav-5">
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/yoosee.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Camera</p>
-										<h3 class="product-name"><a href="#">Camera Yoosee<a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/imou.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Camera</p>
-										<h3 class="product-name"><a href="#">Camera Imou</a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/ezviz.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Camera</p>
-										<h3 class="product-name"><a href="#">Camera Ezviz</a></h3>
-										<!-- <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4> -->
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
-						</div>
-					</div>
-
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>Để lại thông tin Email chính thức với <strong>Máy tính Hòa Phát</strong></p>
-							<form>
-								<input class="input" type="email" placeholder="Nhập email của bạn">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Gửi</button>
-							</form>
-							<ul class="newsletter-follow">
-								<li>
-									<a href="https://www.facebook.com/profile.php?id=61584345367065"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /NEWSLETTER -->
-
-		<!-- FOOTER -->
-		<footer id="footer">
-			<!-- top footer -->
-			<div class="section">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Về Chúng Tôi</h3>
-								<p>Máy Tính Hòa Phát – Uy tín tạo nên giá trị
-												Chuyên cung cấp laptop và máy tính chất lượng cho học tập – văn phòng.
-												Bảo hành chu đáo, hỗ trợ tận tâm, giá cả phù hợp mọi gia đình tại Yên Thành.</p>
-								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>Đối diện THCS Phan Đăng Lưu, Yên Thành, Nghệ An</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>0337286632</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>thiennguyen.mark@gmail.com</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Danh mục sản phẩm</h3>
-								<ul class="footer-links">
-									<li class="active"><a href="#laptop">Laptop học tập</a></li>
-									<li><a href="#desktop">Máy tính để bàn</a></li>
-									<li><a href="#camera">Camera giám sát</a></li>
-									<li><a href="#printer">Máy in</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="clearfix visible-xs"></div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Thông Tin</h3>
-								<ul class="footer-links">
-									<li><a href="#">Liên hệ chúng tôi</a></li>
-									<li><a href="#">Chính sách bán hàng</a></li>
-									<li><a href="#">Đặt Hàng và Thanh Toán</a></li>
-									<li><a href="#">Hỗ trợ bảo hành</a></li>
-								</ul>
-							</div>
-						</div>
-
-					
-					</div>
-					<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /top footer -->
-
-			<!-- bottom footer -->
-			<div id="bottom-footer" class="section">
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<ul class="footer-payments">
-								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-							</ul>
-							<span class="copyright">
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> Máy tính Hòa Phát - C2 Phan Đăng Lưu Yên Thành, Nghệ An</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</span>
-						</div>
-					</div>
-						<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /bottom footer -->
-		</footer>
-		<!-- /FOOTER -->
-
-		<!-- jQuery Plugins -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slick.min.js"></script>
-		<script src="js/nouislider.min.js"></script>
-		<script src="js/jquery.zoom.min.js"></script>
-		<script src="js/main.js"></script>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Lấy thẻ header và khoảng cách của nó so với đỉnh trang
+    <!-- jQuery Plugins -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      $(document).ready(function () {
         var header = $("#header");
         var stickyOffset = header.offset().top;
-
-        // Bắt sự kiện mỗi khi cuộn chuột
-        $(window).scroll(function() {
-            if ($(window).scrollTop() > stickyOffset) {
-                // Nếu cuộn qua vị trí ban đầu của thẻ, thêm class 'sticky-header'
-                header.addClass("sticky-header");
-            } else {
-                // Nếu cuộn ngược lại, xóa class đi
-                header.removeClass("sticky-header");
-            }
+        $(window).scroll(function () {
+          if ($(window).scrollTop() > stickyOffset) {
+            header.addClass("sticky-header");
+          } else {
+            header.removeClass("sticky-header");
+          }
         });
-    });
-</script>
-	</body>
+      });
+    </script>
+  </body>
 </html>

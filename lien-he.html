@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Máy tính Hòa Phát - Liên hệ & Hỗ trợ | Yên Thành Nghệ An</title>
+
+    <!-- Google Fonts & Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <link rel="icon" type="image/x-icon" href="img/lg_new.png" />
+
+    <style>
+      :root {
+        --primary: #0b2b44; /* xanh navy đậm chủ đạo */
+        --primary-dark: #051f33; /* xanh rất đậm */
+        --primary-light: #1e4a76; /* xanh sáng hơn */
+        --primary-soft: #eef3fc; /* nền xanh nhạt */
+        --gray-bg: #f8fafc;
+        --gray-light: #eef2f8;
+        --text-dark: #1e2a3e;
+        --text-muted: #4a5b6e;
+        --shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+        --border-radius-card: 24px;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #ffffff;
+        color: var(--text-dark);
+        line-height: 1.5;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      #top-header {
+        background: var(--primary);
+        color: white;
+        font-size: 14px;
+        padding: 8px 0;
+      }
+      #top-header .header-links a {
+        color: #f0f4fa;
+        text-decoration: none;
+        margin-right: 20px;
+        transition: 0.2s;
+      }
+      #top-header .header-links a:hover {
+        color: var(--primary-light);
+      }
+      #header {
+        background: white;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        padding: 12px 0;
+        transition: all 0.3s;
+      }
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+        animation: slideDown 0.3s ease;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      .header-logo img {
+        max-height: 52px;
+      }
+      .hotline-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #f0f4fa;
+        padding: 8px 18px;
+        border-radius: 60px;
+      }
+      .hotline-icon i {
+        font-size: 24px;
+        color: var(--primary);
+      }
+      .hotline-text span {
+        font-size: 12px;
+        font-weight: 500;
+        color: #5a6e84;
+      }
+      .hotline-text strong {
+        font-size: 16px;
+        color: var(--primary);
+      }
+      .search-form-modern {
+        display: flex;
+        background: white;
+        border: 1px solid #e2e9f2;
+        border-radius: 60px;
+        overflow: hidden;
+      }
+      .search-select-wrapper select {
+        border: none;
+        background: #f9fbfd;
+        padding: 10px 16px;
+        font-weight: 500;
+      }
+      .modern-input {
+        flex: 1;
+        border: none;
+        padding: 10px 16px;
+        outline: none;
+      }
+      .search-btn-modern {
+        background: var(--primary);
+        border: none;
+        color: white;
+        padding: 0 24px;
+        transition: 0.2s;
+      }
+      .search-btn-modern:hover {
+        background: var(--primary-light);
+      }
+      .contact-hero {
+        background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+        padding: 60px 0 40px;
+        text-align: center;
+        border-bottom: 1px solid rgba(11, 43, 68, 0.08);
+      }
+      .contact-hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primary); /* chỉ một màu xanh navy */
+        margin-bottom: 16px;
+      }
+      .contact-hero p {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 680px;
+        margin: 0 auto;
+      }
+      .info-card-modern {
+        background: white;
+        border-radius: var(--border-radius-card);
+        box-shadow: var(--shadow-sm);
+        padding: 32px;
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .info-card-modern:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+      .contact-method-item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 14px 0;
+        border-bottom: 1px solid #ecf3f9;
+      }
+      .contact-method-item:last-child {
+        border-bottom: none;
+      }
+      .method-icon {
+        width: 52px;
+        height: 52px;
+        background: rgba(11, 43, 68, 0.08);
+        border-radius: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: var(--primary);
+      }
+      .method-details strong {
+        display: block;
+        font-size: 1rem;
+        color: var(--text-dark);
+      }
+      .method-details span,
+      .method-details a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .method-details a:hover {
+        color: var(--primary);
+      }
+      .btn-primary-custom {
+        background: var(--primary);
+        border: none;
+        padding: 12px 28px;
+        border-radius: 40px;
+        font-weight: 600;
+        color: white;
+        transition: 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn-primary-custom:hover {
+        background: var(--primary-light);
+        color: white;
+        transform: scale(1.02);
+      }
+      .btn-outline-primary-custom {
+        border: 1.5px solid var(--primary);
+        background: transparent;
+        padding: 11px 28px;
+        border-radius: 40px;
+        font-weight: 600;
+        color: var(--primary);
+        transition: 0.2s;
+      }
+      .btn-outline-primary-custom:hover {
+        background: var(--primary);
+        color: white;
+      }
+      .contact-form .form-control,
+      .contact-form .form-select {
+        border-radius: 18px;
+        border: 1px solid #dde5ef;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        background: #fff;
+      }
+      .contact-form .form-control:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(11, 43, 68, 0.1);
+      }
+      .map-modern {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid #eef2f8;
+        height: 280px;
+      }
+      .map-modern iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .feature-box {
+        text-align: center;
+        padding: 24px 16px;
+        background: white;
+        border-radius: 32px;
+        transition: all 0.2s;
+        height: 100%;
+        border: 1px solid #eef2f8;
+      }
+      .feature-box i {
+        font-size: 40px;
+        color: var(--primary);
+        margin-bottom: 16px;
+      }
+      .feature-box h5 {
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .faq-item {
+        background: white;
+        border-radius: 20px;
+        margin-bottom: 16px;
+        border: 1px solid #eef2f8;
+        overflow: hidden;
+      }
+      .faq-question {
+        padding: 20px 24px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        background: #ffffff;
+        color: var(--primary-dark);
+        transition: 0.2s;
+      }
+      .faq-question:hover {
+        background: #fafcff;
+      }
+      .faq-answer {
+        padding: 0 24px 20px 24px;
+        color: var(--text-muted);
+        border-top: 1px solid #eef2f8;
+        display: none;
+      }
+      .faq-item.active .faq-answer {
+        display: block;
+      }
+      .footer-extended {
+        background: var(--primary-dark);
+        color: #bcd0e6;
+        padding: 48px 0 32px;
+      }
+      .footer-extended a {
+        color: #cbdbe6;
+        text-decoration: none;
+      }
+      .footer-extended a:hover {
+        color: var(--primary-light);
+      }
+      #bottom-footer {
+        background: #05172a;
+        padding: 20px 0;
+        color: #8aa0b5;
+        text-align: center;
+      }
+      @media (max-width: 768px) {
+        .contact-hero h1 {
+          font-size: 2.2rem;
+        }
+        .info-card-modern {
+          padding: 24px;
+        }
+        .method-icon {
+          width: 44px;
+          height: 44px;
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="site-header">
+      <div id="top-header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-8 col-12">
+              <ul class="header-links list-inline mb-0">
+                <li class="list-inline-item me-3">
+                  <a href="tel:0337286632"
+                    ><i class="fas fa-phone-alt me-1"></i> 0337.286.632</a
+                  >
+                </li>
+                <li class="list-inline-item me-3">
+                  <a href="mailto:thiennguyen.mark@gmail.com"
+                    ><i class="far fa-envelope me-1"></i>
+                    thiennguyen.mark@gmail.com</a
+                  >
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="https://share.google/Wa2H242jdTY1ezBwh"
+                    target="_blank"
+                    ><i class="fas fa-map-marker-alt me-1"></i> Đối diện THCS
+                    Phan Đăng Lưu, Yên Thành</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-12 text-md-end">
+              <ul class="header-links list-inline mb-0">
+                <li class="list-inline-item">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61584345367065"
+                    target="_blank"
+                    ><i class="fab fa-facebook-square me-1"></i> Fanpage Hòa
+                    Phát</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-3 col-6">
+              <div class="header-logo">
+                <a href="./index.html" target="_blank" class="logo"
+                  ><img
+                    src="./img/hoaphat_mini_logo.jpg"
+                    alt="Máy Tính Hòa Phát"
+                    style="max-height: 50px"
+                /></a>
+              </div>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+              <div class="header-search">
+                <form class="search-form-modern">
+                  <div class="search-select-wrapper">
+                    <select class="form-select rounded-0 border-0 bg-light">
+                      <option>Tất cả danh mục</option>
+                      <option>Laptop học tập</option>
+                      <option>Máy tính để bàn</option>
+                      <option>Máy in</option>
+                      <option>Camera giám sát</option>
+                    </select>
+                  </div>
+                  <input
+                    class="modern-input"
+                    placeholder="Tìm kiếm sản phẩm, linh kiện..."
+                  />
+                  <button type="button" class="search-btn-modern">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-3 col-6 text-end">
+              <div class="hotline-box d-inline-flex">
+                <div class="hotline-icon"><i class="fas fa-headset"></i></div>
+                <div class="hotline-text">
+                  <span>Tư vấn miễn phí</span>
+                  <strong>0337.286.632</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="contact-hero">
+      <div class="container">
+        <h1><i class="fas fa-headset me-2"></i> Liên hệ Hòa Phát</h1>
+        <p>
+          Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7. Gọi ngay, nhắn Zalo hoặc để
+          lại lời nhắn – đội ngũ kỹ thuật sẽ phản hồi nhanh nhất.
+        </p>
+      </div>
+    </section>
+
+    <div class="container py-5">
+      <!-- Hàng thông tin chính + Form liên hệ -->
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <div class="info-card-modern">
+            <h3 class="mb-4" style="font-weight: 800">
+              <i class="fas fa-store me-2" style="color: var(--primary)"></i>
+              Cửa hàng Máy tính Hòa Phát
+            </h3>
+            <div class="contact-method-item">
+              <div class="method-icon"><i class="fas fa-map-pin"></i></div>
+              <div class="method-details">
+                <strong>Địa chỉ trung tâm</strong>
+                <span
+                  >Đối diện THCS Phan Đăng Lưu, Khối 3, Yên Thành, Nghệ An</span
+                >
+              </div>
+            </div>
+            <div class="contact-method-item">
+              <div class="method-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="method-details">
+                <strong>Hotline / Zalo chính</strong>
+                <a href="tel:0337286632">0337.286.632</a>
+                <span class="badge bg-primary ms-2">24/7</span>
+              </div>
+            </div>
+            <div class="contact-method-item">
+              <div class="method-icon"><i class="fas fa-phone-volume"></i></div>
+              <div class="method-details">
+                <strong>Số phụ (Kinh doanh - Kỹ thuật)</strong>
+                <span
+                  >0387.255.832 (Thiện) &nbsp;|&nbsp; 0346.431.729 (Quyết)</span
+                >
+              </div>
+            </div>
+            <div class="contact-method-item">
+              <div class="method-icon"><i class="far fa-envelope"></i></div>
+              <div class="method-details">
+                <strong>Email chính thức</strong>
+                <a href="mailto:thiennguyen.mark@gmail.com"
+                  >thiennguyen.mark@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="contact-method-item">
+              <div class="method-icon"><i class="far fa-clock"></i></div>
+              <div class="method-details">
+                <strong>Giờ mở cửa</strong>
+                <span
+                  >Thứ 2 - Chủ nhật: 08:00 – 19:00 (kể cả lễ, Tết có hỗ
+                  trợ)</span
+                >
+              </div>
+            </div>
+            <div class="mt-4 d-flex flex-wrap gap-3">
+              <a
+                href="https://zalo.me/0337286632"
+                target="_blank"
+                class="btn-primary-custom"
+                ><i class="fab fa-zalo"></i> Chat Zalo ngay</a
+              >
+              <a
+                href="mailto:thiennguyen.mark@gmail.com?subject=Liên hệ từ web Hòa Phát&body=Chào anh/chị, tôi cần tư vấn về..."
+                class="btn-outline-primary-custom"
+                ><i class="far fa-paper-plane"></i> Gửi Email</a
+              >
+              <a
+                href="https://www.facebook.com/profile.php?id=61584345367065"
+                target="_blank"
+                class="btn-outline-primary-custom"
+                style="border-color: var(--primary); color: var(--primary)"
+                ><i class="fab fa-facebook-f"></i> Facebook</a
+              >
+            </div>
+            <hr class="my-4" />
+            <div
+              class="d-flex align-items-center justify-content-between flex-wrap"
+            >
+              <div>
+                <i class="fas fa-shield-alt text-primary me-2"></i>
+                <strong>Bảo hành chính hãng - Uy tín 10 năm</strong>
+              </div>
+              <div>
+                <i class="fas fa-truck-fast text-primary"></i> Giao hàng nhanh
+                Yên Thành & lân cận
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="info-card-modern">
+            <h3 class="mb-3">
+              <i class="fab fa-facebook-messenger me-2"></i> Gửi tin nhắn trực
+              tiếp
+            </h3>
+            <p class="text-muted mb-4">
+              Điền thông tin bên dưới chúng tôi sẽ liên hệ lại trong vòng 30
+              phút
+            </p>
+            <form id="messengerContactForm" class="contact-form">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Họ và tên</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Nguyễn Văn A"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Số điện thoại</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phoneNumber"
+                  placeholder="0987 654 321"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Email (tùy chọn)</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailContact"
+                  placeholder="example@email.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold"
+                  >Nội dung cần hỗ trợ</label
+                >
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  id="messageContent"
+                  placeholder="Tôi muốn tư vấn về laptop, báo giá máy tính, thiết kế website..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn-primary-custom w-100 justify-content-center"
+              >
+                <i class="fas fa-paper-plane"></i> Gửi yêu cầu tư vấn
+              </button>
+              <p class="small text-muted mt-3 text-center">
+                <i class="fas fa-lock"></i> Dữ liệu được gửi trực tiếp đến
+                Fanpage, chúng tôi sẽ phản hồi nhanh nhất.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hàng BẢN ĐỒ -->
+      <div class="row g-4 mt-3">
+        <div class="col-lg-7">
+          <div class="info-card-modern h-100">
+            <h4 class="mb-3">
+              <i class="fas fa-map-marked-alt me-2"></i> Xem đường đi trực tiếp
+            </h4>
+            <div class="map-modern">
+              <iframe
+                src="https://www.google.com/maps?q=Đối+diện+THCS+Phan+Đăng+Lưu,+Khối+3,+Yên+Thành,+Nghệ+An&output=embed"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div
+            class="info-card-modern h-100 d-flex flex-column justify-content-center"
+          >
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <i class="fas fa-qrcode fa-2x" style="color: var(--primary)"></i>
+              <div>
+                <strong>Quét mã Zalo:</strong> 0337.286.632<br /><span
+                  class="small"
+                  >Kết bạn để nhận báo giá nhanh</span
+                >
+              </div>
+            </div>
+            <div
+              class="alert alert-light border rounded-3 p-3"
+              style="background: #f5f9ff"
+            >
+              <i class="fas fa-car-side text-primary me-2"></i>
+              <strong>Chỉ đường nhanh:</strong> Cách Quốc lộ 7 chỉ 500m, gần
+              trường THCS Phan Đăng Lưu.
+            </div>
+            <a
+              href="https://zalo.me/0337286632"
+              target="_blank"
+              class="btn-primary-custom mt-2 w-100 justify-content-center"
+              ><i class="fab fa-zalo"></i> Kết bạn Zalo ngay</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 LÝ DO CHỌN HÒA PHÁT -->
+      <div class="row mt-5 pt-4 g-4">
+        <div class="col-12 text-center mb-2">
+          <h2 class="fw-bold" style="color: var(--primary)">
+            ✨ Vì sao khách hàng tin tưởng?
+          </h2>
+          <p class="text-muted">
+            Dịch vụ chuyên nghiệp, giá cạnh tranh và hậu mãi chu đáo
+          </p>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="feature-box">
+            <i class="fas fa-laptop-code"></i>
+            <h5>Chuyên gia tư vấn</h5>
+            <p class="small">
+              Đội ngũ kỹ thuật am hiểu linh kiện, laptop, web.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="feature-box">
+            <i class="fas fa-wrench"></i>
+            <h5>Bảo hành tận tâm</h5>
+            <p class="small">Bảo hành 12 tháng, hỗ trợ phần mềm trọn đời.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="feature-box">
+            <i class="fas fa-globe"></i>
+            <h5>Thiết kế web chuẩn SEO</h5>
+            <p class="small">
+              Dịch vụ làm website chuyên nghiệp cho doanh nghiệp.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="feature-box">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h5>Giá tốt nhất khu vực</h5>
+            <p class="small">Luôn có ưu đãi cho khách hàng thân thiết.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="row mt-5 g-4">
+        <div class="col-12">
+          <div class="info-card-modern p-4">
+            <h3 class="mb-4 text-center">
+              <i class="fas fa-question-circle me-2"></i> Giải đáp thắc mắc
+              nhanh
+            </h3>
+            <div class="faq-list">
+              <div class="faq-item active">
+                <div class="faq-question">
+                  Tôi có thể đặt hàng online và giao tận nơi không?
+                  <i class="fas fa-angle-up"></i>
+                </div>
+                <div class="faq-answer">
+                  Có, chúng tôi hỗ trợ giao hàng toàn huyện Yên Thành và các
+                  huyện lân cận (Đô Lương, Diễn Châu). Miễn phí vận chuyển bán
+                  kính 10km.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  Cửa hàng có nhận sửa chữa máy tính tại nhà không?
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="faq-answer">
+                  Có, đội ngũ kỹ thuật hỗ trợ sửa chữa tại nhà cho khách trong
+                  khu vực Yên Thành. Liên hệ hotline 0337.286.632 để đặt lịch.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  Dịch vụ thiết kế website bao gồm những gì?
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="faq-answer">
+                  Thiết kế giao diện, tối ưu tốc độ, chuẩn SEO, bảo hành 1 năm,
+                  hỗ trợ đăng bài và hosting trọn gói. Liên hệ để nhận báo giá
+                  chi tiết.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  Làm sao để nhận báo giá nhanh nhất?
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="faq-answer">
+                  Bạn có thể gọi trực tiếp, nhắn Zalo hoặc điền form ở trên.
+                  Chúng tôi sẽ gửi báo giá trong vòng 15 phút.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="footer-extended">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-md-4">
+              <h4 class="fw-bold text-white mb-3">Máy tính Hòa Phát</h4>
+              <p>
+                Uy tín tạo nên thương hiệu – chuyên cung cấp laptop, PC, linh
+                kiện chính hãng, camera an ninh và thiết kế website chuyên
+                nghiệp tại Nghệ An.
+              </p>
+              <div class="mt-3">
+                <a href="#" class="me-3 text-white-50"
+                  ><i class="fab fa-facebook-f fa-lg"></i
+                ></a>
+                <a href="#" class="me-3 text-white-50"
+                  ><i class="fab fa-zalo fa-lg"></i
+                ></a>
+                <a href="#" class="text-white-50"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h4 class="fw-bold text-white mb-3">Liên kết nhanh</h4>
+              <ul class="list-unstyled">
+                <li class="mb-2"><a href="#">Trang chủ</a></li>
+                <li class="mb-2"><a href="#">Sản phẩm nổi bật</a></li>
+                <li class="mb-2"><a href="#">Dịch vụ thiết kế web</a></li>
+                <li class="mb-2"><a href="#">Chính sách bảo hành</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4 class="fw-bold text-white mb-3">Thông tin liên hệ</h4>
+              <p>
+                <i class="fas fa-map-marker-alt me-2"></i> Đối diện THCS Phan
+                Đăng Lưu, Yên Thành, Nghệ An
+              </p>
+              <p>
+                <i class="fas fa-phone-alt me-2"></i> 0337.286.632 -
+                0387.255.832
+              </p>
+              <p>
+                <i class="far fa-envelope me-2"></i> thiennguyen.mark@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="bottom-footer">
+        <div class="container">
+          <span
+            >Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Máy tính Hòa Phát - Thiết kế bởi đội ngũ chuyên nghiệp</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Sticky header
+        var header = $("#header");
+        if (header.length) {
+          var stickyOffset = header.offset().top;
+          $(window).scroll(function () {
+            if ($(window).scrollTop() > stickyOffset)
+              header.addClass("sticky-header");
+            else header.removeClass("sticky-header");
+          });
+        }
+
+        // FAQ toggle
+        $(".faq-question").click(function () {
+          var parent = $(this).closest(".faq-item");
+          parent.toggleClass("active");
+          parent
+            .find(".faq-question i")
+            .toggleClass("fa-angle-up fa-angle-down");
+          if (!parent.hasClass("active")) {
+            parent
+              .find(".faq-question i")
+              .removeClass("fa-angle-up")
+              .addClass("fa-angle-down");
+          } else {
+            parent
+              .find(".faq-question i")
+              .removeClass("fa-angle-down")
+              .addClass("fa-angle-up");
+          }
+        });
+
+        // Xử lý form gửi qua Messenger (Fanpage ID: 61584345367065)
+        $("#messengerContactForm").on("submit", function (e) {
+          e.preventDefault();
+          let fullName = $("#fullName").val().trim();
+          let phone = $("#phoneNumber").val().trim();
+          let email = $("#emailContact").val().trim();
+          let message = $("#messageContent").val().trim();
+
+          if (fullName === "" || phone === "") {
+            alert(
+              "Vui lòng nhập họ tên và số điện thoại để chúng tôi liên hệ lại.",
+            );
+            return;
+          }
+
+          // Tạo nội dung tin nhắn gửi đến Fanpage
+          let messengerText = `📌 *THÔNG TIN TƯ VẤN TỪ WEBSITE*\n\n👤 Họ tên: ${fullName}\n📞 Số điện thoại: ${phone}\n📧 Email: ${email || "Không cung cấp"}\n💬 Nội dung: ${message || "Khách hàng cần tư vấn sản phẩm/dịch vụ."}\n\n⏰ Gửi từ form liên hệ Hòa Phát.`;
+          // Mã hóa cho URL
+          let encodedText = encodeURIComponent(messengerText);
+          // ID Fanpage (lấy từ link: https://www.facebook.com/profile.php?id=61584345367065)
+          let fanpageId = "61584345367065";
+          let messengerUrl = `https://m.me/${fanpageId}?text=${encodedText}`;
+
+          // Mở cửa sổ Messenger (tab mới)
+          window.open(messengerUrl, "_blank");
+          alert(
+            "Đã chuyển đến Messenger! Vui lòng nhấn Enter để gửi tin nhắn tư vấn. Cảm ơn bạn.",
+          );
+
+          // Tùy chọn reset form
+          $("#messengerContactForm")[0].reset();
+        });
+      });
+    </script>
+  </body>
+</html>
