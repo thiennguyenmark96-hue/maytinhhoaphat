@@ -1,0 +1,1537 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>
+      Máy tính Hòa Phát | Thiết kế website & Công nghệ tại Yên Thành, Nghệ An
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #ffffff;
+        color: #1e293b;
+        scroll-behavior: smooth;
+      }
+      :root {
+        --navy: #0f2b4d;
+        --navy-light: #1e3a6b;
+        --gold: #eab308;
+        --gray-bg: #f8fafc;
+        --shadow-sm:
+          0 10px 25px -5px rgba(0, 0, 0, 0.05),
+          0 8px 10px -6px rgba(0, 0, 0, 0.02);
+        --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+        line-height: 1;
+      }
+      .icon-inherit {
+        font-size: inherit !important;
+      }
+      .icon-title {
+        font-size: 2.5rem;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      .top-bar {
+        background: var(--navy);
+        color: white;
+        font-size: 0.85rem;
+        padding: 8px 0;
+      }
+      .top-bar a {
+        color: #f1f5f9;
+        text-decoration: none;
+        margin-right: 20px;
+        transition: 0.2s;
+      }
+      .top-bar a:hover {
+        color: var(--gold);
+      }
+      .main-header {
+        background: white;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+        border-bottom: 1px solid #e9eef3;
+      }
+      .logo img {
+        max-height: 52px;
+        width: auto;
+      }
+      .hotline-header {
+        background: #f1f5f9;
+        border-radius: 40px;
+        padding: 6px 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn-navy {
+        background: var(--navy);
+        color: white;
+        border-radius: 40px;
+        padding: 8px 24px;
+        font-weight: 600;
+        transition: 0.25s;
+        border: none;
+      }
+      .btn-navy:hover {
+        background: var(--navy-light);
+        color: white;
+        transform: translateY(-2px);
+      }
+      .btn-outline-navy {
+        border: 1.5px solid var(--navy);
+        background: transparent;
+        color: var(--navy);
+        border-radius: 40px;
+        padding: 8px 24px;
+        font-weight: 600;
+      }
+      .btn-outline-navy:hover {
+        background: var(--navy);
+        color: white;
+      }
+      .btn-fb {
+        background: #1877f2;
+        color: white;
+        border-radius: 40px;
+        padding: 8px 24px;
+        font-weight: 600;
+        transition: 0.25s;
+        border: none;
+      }
+      .btn-fb:hover {
+        background: #0d65d9;
+        color: white;
+        transform: translateY(-2px);
+      }
+      .section-title-custom {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .section-title-custom h2 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--navy);
+        position: relative;
+        display: inline-block;
+      }
+      .section-title-custom h2:after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 3px;
+        background: var(--gold);
+        border-radius: 4px;
+      }
+      .section-title-custom p {
+        color: #475569;
+        max-width: 700px;
+        margin: 1.5rem auto 0;
+        font-size: 1rem;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 1.8rem;
+        margin-top: 2rem;
+      }
+      .feature-card {
+        background: white;
+        border-radius: 28px;
+        padding: 1.8rem 1rem;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.25s;
+        border: 1px solid #eef2f8;
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+      .feature-icon {
+        background: #eef3fc;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        border-radius: 50%;
+        margin: 0 auto 1.2rem;
+        color: var(--navy);
+        font-size: 2rem;
+      }
+      .feature-icon .material-symbols-outlined {
+        font-size: 2.5rem;
+        vertical-align: middle;
+      }
+      .package-card {
+        background: #fff;
+        border-radius: 32px;
+        padding: 2rem 1.5rem;
+        transition: 0.25s;
+        height: 100%;
+        border: 1px solid #e2edf7;
+        box-shadow: var(--shadow-sm);
+      }
+      .package-card:hover {
+        border-color: var(--navy);
+        transform: scale(1.01);
+      }
+      .price {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--navy);
+      }
+      .package-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 1.5rem 0;
+      }
+      .package-list li {
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .package-list .material-symbols-outlined {
+        color: #16a34a;
+        font-size: 1.2rem;
+      }
+      .feature-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .feature-box {
+        background: white;
+        border-radius: 26px;
+        padding: 1.7rem;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid #eef2f8;
+        transition: transform 0.25s;
+      }
+      .feature-box:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+      .contact-parallel {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.8rem;
+        align-items: stretch;
+      }
+      .contact-card-mini {
+        flex: 1;
+        min-width: 260px;
+        background: white;
+        border-radius: 28px;
+        padding: 1.8rem;
+        border: 1px solid #eef2f8;
+        box-shadow: var(--shadow-sm);
+      }
+      .contact-meta {
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+      .contact-meta .material-symbols-outlined {
+        color: var(--navy);
+        font-size: 1.5rem;
+        margin-top: 4px;
+      }
+      .contact-note {
+        color: #475569;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      .contact-form-card {
+        flex: 1;
+        min-width: 280px;
+        border-radius: 28px;
+        background: white;
+        padding: 1.8rem;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid #eef2f8;
+      }
+      .contact-form-card .form-control,
+      .contact-form-card select {
+        border-radius: 0.85rem;
+        padding: 0.85rem 1rem;
+        border: 1px solid #d1d5db;
+      }
+      .contact-form-card label {
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+        display: block;
+      }
+      .toast-notify {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #0f2b4d;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 60px;
+        font-size: 0.9rem;
+        z-index: 1090;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        transition: opacity 0.3s;
+      }
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .testimonial-card {
+        background: white;
+        border-radius: 28px;
+        padding: 1.8rem;
+        border: 1px solid #eef2f8;
+        box-shadow: var(--shadow-sm);
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .step-circle {
+        width: 60px;
+        height: 60px;
+        background: #eef3fc;
+        color: var(--navy);
+        font-size: 1.8rem;
+        font-weight: 800;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+      }
+      .portfolio-card {
+        border-radius: 24px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+        height: 100%;
+      }
+      .portfolio-img {
+        height: 200px;
+        overflow: hidden;
+      }
+      .portfolio-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.4s;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.8rem;
+      }
+      .product-item {
+        background: #fff;
+        border-radius: 24px;
+        padding: 1rem;
+        text-align: center;
+        transition: 0.2s;
+        border: 1px solid #eef2f8;
+      }
+      .product-img {
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.8rem;
+      }
+      .product-img img {
+        max-height: 120px;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      .faq-accordion-item {
+        background: white;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+        border: 1px solid #e2edf7;
+        overflow: hidden;
+      }
+      .faq-question {
+        padding: 1rem 1.5rem;
+        font-weight: 700;
+        background: #ffffff;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-answer {
+        padding: 0 1.5rem 1.2rem 1.5rem;
+        color: #334155;
+        border-top: 1px solid #eef2f8;
+        display: none;
+      }
+      .faq-accordion-item.active .faq-answer {
+        display: block;
+      }
+      .contact-card {
+        border-radius: 28px;
+        overflow: hidden;
+        background: white;
+        box-shadow: var(--shadow-sm);
+        height: 100%;
+        border: 1px solid #eef2f8;
+      }
+      .zalo-qr {
+        max-width: 160px;
+        border-radius: 20px;
+        margin: 0 auto;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      }
+      footer {
+        background: #0a1a2e;
+        color: #cbd5e6;
+      }
+      @media (max-width: 768px) {
+        .section-title-custom h2 {
+          font-size: 1.8rem;
+        }
+        .contact-parallel {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <div>
+            <a href="tel:0337286632"
+              ><span class="material-symbols-outlined icon-inherit">call</span>
+              0337.286.632</a
+            >
+            <a href="mailto:thiennguyen.mark@gmail.com"
+              ><span class="material-symbols-outlined icon-inherit">mail</span>
+              thiennguyen.mark@gmail.com</a
+            >
+            <a href="https://maps.app.goo.gl/LyhMHBcMZmrimKhC7" target="_blank"
+              ><span class="material-symbols-outlined icon-inherit"
+                >location_on</span
+              >
+              Đối diện THCS Phan Đăng Lưu, Yên Thành</a
+            >
+          </div>
+          <div>
+            <a
+              href="https://www.facebook.com/profile.php?id=61584345367065"
+              target="_blank"
+              ><span class="material-symbols-outlined icon-inherit"
+                >thumb_up</span
+              >
+              Fanpage Hòa Phát</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-header">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-between"
+        >
+          <div class="logo">
+            <a href="#"
+              ><img
+                src="./img/hoaphat_mini_logo.jpg"
+                alt="Máy tính Hòa Phát"
+                onerror="
+                  this.src = 'https://placehold.co/200x60?text=Hoa+Phát'
+                "
+            /></a>
+          </div>
+          <div class="d-none d-md-flex gap-3">
+            <div class="hotline-header">
+              <span class="material-symbols-outlined">support_agent</span>
+              <div>
+                <small>Tư vấn miễn phí</small><br /><strong
+                  >0337.286.632</strong
+                >
+              </div>
+            </div>
+            <a
+              href="https://m.me/61584345367065"
+              class="btn-fb"
+              target="_blank"
+            >
+              <i class="fa-brands fa-facebook"></i> Nhắn tin Facebook</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DỊCH VỤ THIẾT KẾ WEBSITE -->
+    <section
+      class="py-5"
+      style="background: linear-gradient(135deg, #fafcff 0%, #ffffff 100%)"
+    >
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title">public</span>
+            THIẾT KẾ WEBSITE UY TÍN TẠI YÊN THÀNH, NGHỆ AN
+          </h2>
+          <p>
+            Máy tính Hòa Phát – Không chỉ lắp đặt, sửa chữa máy tính, laptop,
+            camera mà còn thiết kế website chuyên nghiệp cho cá nhân, hộ kinh
+            doanh, tổ chức.
+          </p>
+        </div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <h3 class="fw-bold" style="color: var(--navy)">
+              Giải pháp website toàn diện từ A-Z
+            </h3>
+            <p class="mt-3 fs-5">
+              Bạn đang tìm địa chỉ
+              <strong>thiết kế website uy tín ở Yên Thành, Nghệ An</strong>? Máy
+              tính Hòa Phát tự hào mang đến dịch vụ thiết kế web trọn gói với
+              chi phí hợp lý, giao diện hiện đại, chuẩn SEO và dễ dàng quản lý.
+            </p>
+            <p>
+              Với phương châm "Uy tín – Chất lượng – Đồng hành", chúng tôi cam
+              kết đồng hành cùng sự phát triển kinh doanh của bạn trên môi
+              trường số.
+            </p>
+            <a
+              href="https://m.me/61584345367065"
+              class="btn-fb mt-2 d-inline-flex align-items-center gap-2"
+              target="_blank"
+              ><i class="fa-brands fa-facebook"></i> Liên hệ tư vấn miễn phí</a
+            >
+          </div>
+          <div class="col-lg-6">
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined">devices</span>
+                </div>
+                <h5>Chuẩn responsive</h5>
+                <p>Hiển thị đẹp trên điện thoại, tablet, PC.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined">trending_up</span>
+                </div>
+                <h5>Chuẩn SEO</h5>
+                <p>Tối ưu từ khóa địa phương, tăng thứ hạng Google.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined">security</span>
+                </div>
+                <h5>Bảo mật cao</h5>
+                <p>SSL, chống spam, backup định kỳ.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <span class="material-symbols-outlined">headset_mic</span>
+                </div>
+                <h5>Hỗ trợ 24/7</h5>
+                <p>Luôn sẵn sàng khi bạn cần.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GÓI DỊCH VỤ -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title"
+              >inventory_2</span
+            >
+            GÓI DỊCH VỤ THIẾT KẾ WEBSITE
+          </h2>
+          <p>Lựa chọn linh hoạt phù hợp nhu cầu và ngân sách</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="package-card">
+              <div class="text-center">
+                <span
+                  class="material-symbols-outlined icon-3x"
+                  style="color: var(--navy)"
+                  >send</span
+                >
+              </div>
+              <h4 class="text-center fw-bold mt-3">Landing Page</h4>
+              <div class="price text-center">2.500.000đ</div>
+              <ul class="package-list">
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Giao diện 1 trang duy nhất
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Tích hợp form liên hệ, Zalo
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Tối ưu tốc độ tải trang
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Tặng tên miền .com/.vn 1 năm
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Hosting 1GB SSD
+                </li>
+              </ul>
+              <div class="text-center mt-3">
+                <a
+                  href="https://m.me/61584345367065"
+                  class="btn-fb"
+                  target="_blank"
+                  >Đăng ký ngay</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="package-card">
+              <div class="text-center">
+                <span
+                  class="material-symbols-outlined icon-3x"
+                  style="color: var(--navy)"
+                  >business</span
+                >
+              </div>
+              <h4 class="text-center fw-bold mt-3">Website Doanh Nghiệp</h4>
+              <div class="price text-center">5.900.000đ</div>
+              <ul class="package-list">
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Thiết kế 5-7 trang
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Tích hợp blog, tin tức
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Quản trị nội dung dễ dàng
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Tặng tên miền & hosting 2GB
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span> Hỗ
+                  trợ SEO onpage cơ bản
+                </li>
+              </ul>
+              <div class="text-center mt-3">
+                <a
+                  href="https://m.me/61584345367065"
+                  class="btn-fb"
+                  target="_blank"
+                  >Tư vấn ngay</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="package-card">
+              <div class="text-center">
+                <span
+                  class="material-symbols-outlined icon-3x"
+                  style="color: var(--navy)"
+                  >shopping_cart</span
+                >
+              </div>
+              <h4 class="text-center fw-bold mt-3">Bán Hàng Online</h4>
+              <div class="price text-center">8.900.000đ</div>
+              <ul class="package-list">
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Giỏ hàng, thanh toán online
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Quản lý sản phẩm, đơn hàng
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Tích hợp vận chuyển, mã giảm giá
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Tặng tên miền & hosting 5GB
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">check_circle</span> Hỗ
+                  trợ marketing cơ bản
+                </li>
+              </ul>
+              <div class="text-center mt-3">
+                <a
+                  href="https://m.me/61584345367065"
+                  class="btn-fb"
+                  target="_blank"
+                  >Nhận báo giá</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÍNH NĂNG WEBSITE -->
+    <section
+      class="py-5"
+      style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)"
+    >
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title"
+              >rocket_launch</span
+            >
+            TÍNH NĂNG WEBSITE BẠN NHẬN ĐƯỢC
+          </h2>
+          <p>
+            Giải pháp web trọn gói với liên hệ nhanh, SEO địa phương và hỗ trợ
+            sau bán giao.
+          </p>
+        </div>
+        <div class="feature-list">
+          <div class="feature-box">
+            <h5>Form liên hệ nhanh</h5>
+            <p>
+              Khách hàng có thể gửi yêu cầu trực tiếp ngay trên trang, không cần
+              nhớ số điện thoại.
+            </p>
+          </div>
+          <div class="feature-box">
+            <h5>Zalo Chat & Gọi nhanh</h5>
+            <p>
+              Tích hợp nút Zalo và số điện thoại, khách dễ dàng liên hệ ngay lập
+              tức.
+            </p>
+          </div>
+          <div class="feature-box">
+            <h5>Fanpage & mạng xã hội</h5>
+            <p>
+              Liên kết trực tiếp đến Fanpage để khách xem đánh giá và nhắn tin
+              thêm.
+            </p>
+          </div>
+          <div class="feature-box">
+            <h5>Bản đồ Google Maps</h5>
+            <p>Khách dễ tìm cửa hàng với bản đồ tích hợp và địa chỉ rõ ràng.</p>
+          </div>
+          <div class="feature-box">
+            <h5>Chuẩn SEO local</h5>
+            <p>
+              Website tối ưu từ khóa Yên Thành, Nghệ An giúp tăng khả năng xuất
+              hiện tìm kiếm.
+            </p>
+          </div>
+          <div class="feature-box">
+            <h5>Quản trị dễ dàng</h5>
+            <p>
+              Quản lý nội dung, tin tức, sản phẩm và cập nhật thông tin nhanh
+              chóng.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN LIÊN HỆ SONG SONG + TƯ VẤN MIỄN PHÍ (ĐÃ THÊM 2 SỐ ĐIỆN THOẠI) -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title"
+              >contact_page</span
+            >
+            LIÊN HỆ & TƯ VẤN NHANH
+          </h2>
+          <p>
+            Liên hệ ngay qua thông tin bên trái hoặc gửi yêu cầu tư vấn miễn phí
+          </p>
+        </div>
+        <div class="contact-parallel">
+          <div class="contact-card-mini">
+            <h5>
+              <span class="material-symbols-outlined">call_end</span> Liên hệ
+              ngay
+            </h5>
+            <div class="contact-meta">
+              <span class="material-symbols-outlined">facebook</span>
+              <div>
+                <strong>Fanpage</strong><br /><a
+                  href="https://www.facebook.com/profile.php?id=61584345367065"
+                  target="_blank"
+                  >Máy tính Hòa Phát</a
+                >
+              </div>
+            </div>
+            <div class="contact-meta">
+              <span class="material-symbols-outlined">call</span>
+              <div>
+                <strong>Hotline Máy tính Hòa Phát</strong><br />0337.286.632
+              </div>
+            </div>
+            <div class="contact-meta">
+              <span class="material-symbols-outlined">call</span>
+              <div><strong>Anh Quyết</strong><br />0346.431.729</div>
+            </div>
+            <div class="contact-meta">
+              <span class="material-symbols-outlined">call</span>
+              <div><strong>Anh Thiện</strong><br />0387.225.832</div>
+            </div>
+            <div class="contact-meta">
+              <span class="material-symbols-outlined">location_on</span>
+              <div>
+                <strong>Địa chỉ</strong><br />Đối diện THCS Phan Đăng Lưu, Yên
+                Thành
+              </div>
+            </div>
+            <div class="contact-note">
+              📌 Điền thông tin bên cạnh và nhấn gửi để nhắn tin trực tiếp qua
+              Facebook.
+            </div>
+          </div>
+          <div class="contact-form-card">
+            <p class="text-uppercase text-secondary small fw-bold mb-2">
+              Tư vấn miễn phí
+            </p>
+            <h3 class="fw-bold" style="color: var(--navy)">
+              Bạn cần website? Gửi yêu cầu ngay
+            </h3>
+            <form id="consultForm">
+              <div class="mb-3">
+                <label for="fullname">Họ và tên</label
+                ><input
+                  type="text"
+                  id="fullname"
+                  class="form-control"
+                  placeholder="Nhập tên của bạn"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phoneNum">Số điện thoại</label
+                ><input
+                  type="tel"
+                  id="phoneNum"
+                  class="form-control"
+                  placeholder="0337xxxxxx"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="websiteType">Loại website cần làm</label
+                ><select id="websiteType" class="form-control" required>
+                  <option value="">-- Chọn loại website --</option>
+                  <option>Landing page</option>
+                  <option>Website doanh nghiệp</option>
+                  <option>Website bán hàng</option>
+                  <option>Nâng cấp / bảo trì</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="requestDetail">Nội dung yêu cầu</label
+                ><textarea
+                  id="requestDetail"
+                  rows="3"
+                  class="form-control"
+                  placeholder="Mô tả yêu cầu, dịch vụ, sản phẩm..."
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="button"
+                id="sendToFbBtn"
+                class="btn-fb w-100"
+                style="padding: 12px"
+              >
+                <i class="fa-brands fa-facebook"></i> Gửi yêu cầu qua Facebook
+              </button>
+              <p class="contact-note mt-2 small text-center">
+                💬 Nhấn gửi → nội dung form sẽ tự động xuất hiện trong khung
+                chat Facebook, bạn chỉ cần bấm Gửi là tin nhắn đến ngay với
+                chúng tôi!
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUY TRÌNH LÀM VIỆC -->
+    <section class="py-5" style="background: var(--gray-bg)">
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title"
+              >engineering</span
+            >
+            QUY TRÌNH LÀM VIỆC CHUYÊN NGHIỆP
+          </h2>
+          <p>6 bước đơn giản để sở hữu website hoàn chỉnh</p>
+        </div>
+        <div class="row g-4 text-center">
+          <div class="col-md-2 col-6">
+            <div class="step-circle">1</div>
+            <h6>Tiếp nhận yêu cầu</h6>
+            <small>Trao đổi qua Facebook / gặp trực tiếp</small>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="step-circle">2</div>
+            <h6>Lên ý tưởng</h6>
+            <small>Phác thảo giao diện, cấu trúc</small>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="step-circle">3</div>
+            <h6>Thiết kế UI/UX</h6>
+            <small>Gửi bản demo để duyệt</small>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="step-circle">4</div>
+            <h6>Lập trình</h6>
+            <small>Code chuẩn, tối ưu tốc độ</small>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="step-circle">5</div>
+            <h6>Kiểm tra & bàn giao</h6>
+            <small>Hướng dẫn quản trị</small>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="step-circle">6</div>
+            <h6>Bảo hành, hỗ trợ</h6>
+            <small>Hỗ trợ kỹ thuật dài hạn</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO MẪU WEBSITE -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title"
+              >desktop_windows</span
+            >
+            MỘT SỐ MẪU WEBSITE ĐÃ TRIỂN KHAI
+          </h2>
+          <p>Thực tế tại Yên Thành và các khu vực lân cận</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img
+                  src="https://picsum.photos/id/20/400/250"
+                  alt="Website nông sản"
+                  onerror="
+                    this.src = 'https://placehold.co/400x250?text=Web+Nông+Sản'
+                  "
+                />
+              </div>
+              <div class="portfolio-body">
+                <h5>Website bán đồ dùng học tập</h5>
+                <p>
+                  Giao diện thân thiện, tích hợp đặt hàng, quản lý sản phẩm.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img
+                  src="https://picsum.photos/id/26/400/250"
+                  alt="Doanh nghiệp"
+                  onerror="
+                    this.src = 'https://placehold.co/400x250?text=Doanh+Nghiệp'
+                  "
+                />
+              </div>
+              <div class="portfolio-body">
+                <h5>Giới thiệu cơ sở sửa chữa</h5>
+                <p>Đầy đủ thông tin, map, form liên hệ, dịch vụ rõ ràng.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-card">
+              <div class="portfolio-img">
+                <img
+                  src="https://picsum.photos/id/0/400/250"
+                  alt="Landing Page"
+                  onerror="
+                    this.src = 'https://placehold.co/400x250?text=Landing+Page'
+                  "
+                />
+              </div>
+              <div class="portfolio-body">
+                <h5>Landing Page khóa học online</h5>
+                <p>Chuyển đổi cao, tối ưu mobile, tốc độ tải nhanh.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ĐÁNH GIÁ KHÁCH HÀNG -->
+    <section
+      class="py-5"
+      style="background: linear-gradient(135deg, #f9fbff 0%, #ffffff 100%)"
+    >
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title">reviews</span>
+            ĐÁNH GIÁ KHÁCH HÀNG
+          </h2>
+          <p>
+            Khách hàng nói gì về dịch vụ thiết kế website của Máy tính Hòa Phát.
+          </p>
+        </div>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p>
+              "Website xong đúng hẹn, hình ảnh đẹp, khách hàng tại Yên Thành
+              liên hệ nhiều hơn. Hỗ trợ Facebook rất nhanh, tôi rất yên tâm."
+            </p>
+            <div class="testimonial-footer">
+              <strong>Anh Hoàng</strong
+              ><small>Chủ cửa hàng máy tính - Yên Thành</small>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              "Nhóm thiết kế tư vấn rõ ràng, cập nhật chỉnh sửa nhanh chóng.
+              Hiện tại tôi có thêm nhiều đơn hàng từ website mới."
+            </p>
+            <div class="testimonial-footer">
+              <strong>Chị Lan</strong><small>Chủ cơ sở sửa chữa laptop</small>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              "Giao diện web rất chuyên nghiệp, chạy nhanh trên điện thoại. Sau
+              khi hoàn thiện, tôi đã tiết kiệm nhiều thời gian khi trả lời
+              khách."
+            </p>
+            <div class="testimonial-footer">
+              <strong>Anh Nam</strong
+              ><small>Chủ doanh nghiệp dịch vụ - Nghệ An</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SẢN PHẨM HOT -->
+    <section class="py-5" style="background: #f9fafc">
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title"
+              >local_fire_department</span
+            >
+            SẢN PHẨM CÔNG NGHỆ NỔI BẬT
+          </h2>
+          <p>
+            Song song với thiết kế website, chúng tôi cung cấp máy tính, laptop,
+            camera và giải pháp công nghệ cho cửa hàng tại Yên Thành.
+          </p>
+          <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+            <a href="#" class="btn-navy">Xem sản phẩm cửa hàng</a
+            ><a href="#" class="btn-outline-navy">Xem danh mục hỗ trợ</a>
+          </div>
+        </div>
+        <div class="product-grid">
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/dell_e6540.jpg"
+                alt="Dell E6540"
+                onerror="this.src = 'https://placehold.co/150x120?text=Dell'"
+              />
+            </div>
+            <div class="product-category">Laptop văn phòng</div>
+            <div class="product-name">Dell E6540</div>
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/dell_e7280.jpg"
+                alt="Dell E7280"
+                onerror="this.src = 'https://placehold.co/150x120?text=Dell'"
+              />
+            </div>
+            <div class="product-category">Laptop cao cấp</div>
+            <div class="product-name">Dell E7280</div>
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/dell_5510.jpg"
+                alt="Dell 5510"
+                onerror="this.src = 'https://placehold.co/150x120?text=Dell'"
+              />
+            </div>
+            <div class="product-category">Workstation</div>
+            <div class="product-name">Dell Precision 5510</div>
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/dell_3060.jpg"
+                alt="Dell 3060"
+                onerror="this.src = 'https://placehold.co/150x120?text=Dell'"
+              />
+            </div>
+            <div class="product-category">Máy bàn</div>
+            <div class="product-name">Dell Optiplex 3060</div>
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/dell_3070.jpg"
+                alt="Dell 3070"
+                onerror="this.src = 'https://placehold.co/150x120?text=Dell'"
+              />
+            </div>
+            <div class="product-category">Máy bàn</div>
+            <div class="product-name">Dell 3070 SFF</div>
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/dell_5070.jpg"
+                alt="Dell 5070"
+                onerror="this.src = 'https://placehold.co/150x120?text=Dell'"
+              />
+            </div>
+            <div class="product-category">Máy bàn</div>
+            <div class="product-name">Dell 5070 MT</div>
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/yoosee.jpg"
+                alt="Yoosee"
+                onerror="this.src = 'https://placehold.co/150x120?text=Camera'"
+              />
+            </div>
+            <div class="product-category">Camera IP</div>
+            <div class="product-name">Yoosee 2MP</div>
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/imou.jpg"
+                alt="Imou"
+                onerror="this.src = 'https://placehold.co/150x120?text=Imou'"
+              />
+            </div>
+            <div class="product-category">Camera thông minh</div>
+            <div class="product-name">Imou Ranger 2</div>
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <img
+                src="./img/ezviz.jpg"
+                alt="Ezviz"
+                onerror="this.src = 'https://placehold.co/150x120?text=Ezviz'"
+              />
+            </div>
+            <div class="product-category">Camera Ezviz</div>
+            <div class="product-name">Ezviz C3X</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ĐẦY ĐỦ 5 CÂU HỎI -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title">help</span> CÂU
+            HỎI THƯỜNG GẶP
+          </h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="faq-accordion-item">
+              <div class="faq-question">
+                1. Tôi ở Yên Thành, làm website có phải gặp trực tiếp không?
+                <span class="material-symbols-outlined">expand_more</span>
+              </div>
+              <div class="faq-answer">
+                Có, chúng tôi khuyến khích gặp trực tiếp tại cửa hàng để trao
+                đổi chi tiết. Nếu bận, hỗ trợ tư vấn qua Facebook, gọi video đầy
+                đủ.
+              </div>
+            </div>
+            <div class="faq-accordion-item">
+              <div class="faq-question">
+                2. Thời gian hoàn thành website là bao lâu?
+                <span class="material-symbols-outlined">expand_more</span>
+              </div>
+              <div class="faq-answer">
+                Landing page 3-5 ngày, website doanh nghiệp 7-10 ngày, bán hàng
+                10-15 ngày. Chúng tôi luôn bàn giao sớm nhất.
+              </div>
+            </div>
+            <div class="faq-accordion-item">
+              <div class="faq-question">
+                3. Tôi có thể tự cập nhật nội dung không?
+                <span class="material-symbols-outlined">expand_more</span>
+              </div>
+              <div class="faq-answer">
+                Tất cả website đều có trang quản trị đơn giản, dễ sử dụng. Hướng
+                dẫn cụ thể sau bàn giao.
+              </div>
+            </div>
+            <div class="faq-accordion-item">
+              <div class="faq-question">
+                4. Chi phí đã bao gồm tên miền và hosting chưa?
+                <span class="material-symbols-outlined">expand_more</span>
+              </div>
+              <div class="faq-answer">
+                Đã bao gồm 1 năm đầu tiên. Từ năm thứ hai, chi phí duy trì chỉ
+                từ 900k/năm.
+              </div>
+            </div>
+            <div class="faq-accordion-item">
+              <div class="faq-question">
+                5. Máy tính Hòa Phát có hỗ trợ SEO không?
+                <span class="material-symbols-outlined">expand_more</span>
+              </div>
+              <div class="faq-answer">
+                Có. Tối ưu onpage chuẩn, hỗ trợ từ khóa địa phương, giúp website
+                dễ dàng lên top Google.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BẢN ĐỒ & ZALO (GIỮ NGUYÊN BẢN GỐC) -->
+    <section class="py-5" style="background: #f1f5f9">
+      <div class="container">
+        <div class="section-title-custom">
+          <h2>
+            <span class="material-symbols-outlined icon-title"
+              >location_on</span
+            >
+            BẢN ĐỒ & LIÊN HỆ
+          </h2>
+          <p>
+            Ghé thăm cửa hàng hoặc liên hệ qua Zalo để được tư vấn nhanh nhất
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="contact-card">
+              <div
+                class="p-3 text-white fw-bold"
+                style="background: var(--navy)"
+              >
+                <span class="material-symbols-outlined icon-inherit"
+                  >location_on</span
+                >
+                Vị trí Google Maps
+              </div>
+              <div style="height: 280px">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.40140796569!2d105.4726182!3d19.0020257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313761004747b5bd%3A0x908167d138c22904!2zTcOheSBUw61uaCBIb8OgIFBow6F0!5e0!3m2!1svi!2s!4v1775119484371!5m2!1svi!2s"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="p-3">
+                <span class="material-symbols-outlined icon-inherit"
+                  >pin_drop</span
+                >
+                <strong
+                  >Đối diện THCS Phan Đăng Lưu, Khối 3, Yên Thành, Nghệ
+                  An</strong
+                ><br /><span class="material-symbols-outlined icon-inherit"
+                  >schedule</span
+                >
+                Giờ mở cửa: 08:00 - 19:00 (tất cả các ngày)
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-card">
+              <div
+                class="p-3 text-white fw-bold"
+                style="background: var(--navy)"
+              >
+                <span class="material-symbols-outlined icon-inherit">chat</span>
+                Kết nối qua Zalo
+              </div>
+              <div class="p-4 text-center">
+                <img
+                  src="./img/QR_HOA_PHAT.jpg"
+                  alt="QR Zalo Hòa Phát"
+                  class="zalo-qr mb-3"
+                  onerror="
+                    this.src = 'https://placehold.co/180x180?text=Zalo+QR'
+                  "
+                />
+                <p>Quét mã QR để chat và nhận báo giá nhanh</p>
+                <a href="https://zalo.me/0337286632" class="btn-navy"
+                  ><span class="material-symbols-outlined icon-inherit"
+                    >chat</span
+                  >
+                  Nhắn tin qua Zalo</a
+                >
+                <div class="mt-3">
+                  <span class="material-symbols-outlined icon-inherit"
+                    >call</span
+                  >
+                  Hotline / Zalo: <strong>0337.286.632</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <p class="fs-5 fw-semibold">
+            Bạn cần <strong>làm website uy tín tại Yên Thành Nghệ An</strong>?
+            Hãy để Máy tính Hòa Phát đồng hành!
+          </p>
+          <a href="tel:0337286632" class="btn-navy px-5 py-3 fs-5"
+            ><span class="material-symbols-outlined icon-inherit">call</span>
+            Gọi ngay 0337.286.632</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="pt-5 pb-4">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5 class="text-white fw-bold">Máy Tính Hòa Phát</h5>
+            <p class="small">
+              Uy tín tạo nên giá trị. Chuyên laptop, máy tính, thiết kế website,
+              camera tại Yên Thành, Nghệ An.
+            </p>
+            <p>
+              <span class="material-symbols-outlined icon-inherit"
+                >location_on</span
+              >
+              Đối diện THCS Phan Đăng Lưu, Yên Thành<br /><span
+                class="material-symbols-outlined icon-inherit"
+                >call</span
+              >
+              0337.286.632<br /><span
+                class="material-symbols-outlined icon-inherit"
+                >mail</span
+              >
+              thiennguyen.mark@gmail.com
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h5 class="text-white">Danh mục</h5>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="#" class="text-decoration-none text-white-50"
+                  >Laptop học tập</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-white-50"
+                  >Máy tính để bàn</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-white-50"
+                  >Camera giám sát</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-white-50"
+                  >Máy in văn phòng</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="text-white">Hỗ trợ</h5>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="#" class="text-decoration-none text-white-50"
+                  >Chính sách bảo hành</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-white-50"
+                  >Hướng dẫn mua hàng</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-white-50"
+                  >Thanh toán</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5 class="text-white">Kết nối</h5>
+            <div class="d-flex gap-3">
+              <a
+                href="https://www.facebook.com/profile.php?id=61584345367065"
+                class="text-white-50 fs-5"
+                target="_blank"
+                ><span class="material-symbols-outlined">thumb_up</span></a
+              ><a href="#" class="text-white-50 fs-5"
+                ><span class="material-symbols-outlined">photo_camera</span></a
+              ><a
+                href="https://zalo.me/0337286632"
+                class="text-white-50 fs-5"
+                target="_blank"
+                ><span class="material-symbols-outlined">chat</span></a
+              >
+            </div>
+          </div>
+        </div>
+        <hr class="mt-4 opacity-25" />
+        <div class="text-center small text-white-50">
+          © 2025 Máy tính Hòa Phát - Thiết kế web & công nghệ tại Yên Thành,
+          Nghệ An
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // FAQ toggle
+      document.querySelectorAll(".faq-question").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const parent = btn.closest(".faq-accordion-item");
+          parent.classList.toggle("active");
+          const icon = btn.querySelector(".material-symbols-outlined");
+          icon.textContent = parent.classList.contains("active")
+            ? "expand_less"
+            : "expand_more";
+        });
+      });
+
+      // Hàm tạo nội dung tin nhắn từ form
+      function getMessageContent() {
+        const name = document.getElementById("fullname").value.trim();
+        const phone = document.getElementById("phoneNum").value.trim();
+        const type = document.getElementById("websiteType").value;
+        const detail = document.getElementById("requestDetail").value.trim();
+        if (!name || !phone || !type || !detail) {
+          alert("Vui lòng điền đầy đủ thông tin trước khi gửi!");
+          return null;
+        }
+        return `📢 YÊU CẦU THIẾT KẾ WEBSITE\n━━━━━━━━━━━━━━━━\n👤 Họ tên: ${name}\n📞 SĐT: ${phone}\n🌐 Loại website: ${type}\n📝 Nội dung: ${detail}\n━━━━━━━━━━━━━━━━\nVui lòng tư vấn giúp em ạ!`;
+      }
+
+      // Gửi qua Facebook Messenger
+      document
+        .getElementById("sendToFbBtn")
+        .addEventListener("click", function () {
+          const msg = getMessageContent();
+          if (!msg) return;
+          const fanpageId = "61584345367065";
+          const fbUrl = `https://m.me/${fanpageId}?text=${encodeURIComponent(msg)}`;
+          window.open(fbUrl, "_blank");
+          showToast(
+            "💬 Đã mở Facebook! Hãy bấm Gửi để chúng tôi nhận được yêu cầu.",
+          );
+        });
+
+      function showToast(message) {
+        let existing = document.querySelector(".toast-notify");
+        if (existing) existing.remove();
+        let div = document.createElement("div");
+        div.className = "toast-notify";
+        div.innerHTML = `<span class="material-symbols-outlined">info</span> ${message}`;
+        document.body.appendChild(div);
+        setTimeout(() => {
+          div.style.opacity = "0";
+          setTimeout(() => div.remove(), 500);
+        }, 4000);
+      }
+    </script>
+  </body>
+</html>
