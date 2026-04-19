@@ -297,6 +297,30 @@
           flex-direction: column;
         }
       }
+
+      /* Hiển thị cấu hình sản phẩm */
+      .product-config {
+        font-size: 13px;
+        color: #2c3e50;
+        background: #f1f5f9;
+        padding: 8px 10px;
+        border-radius: 8px;
+        margin: 10px 0 8px;
+        line-height: 1.4;
+        border-left: 4px solid #1a2c4e;
+      }
+      .product-promo {
+        font-size: 14px;
+        font-weight: 700;
+        color: #d32f2f;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .product-promo i {
+        font-size: 16px;
+      }
     </style>
   </head>
   <body>
@@ -1015,7 +1039,282 @@
         </div>
       </div>
     </div>
+    <!-- SECTION DESKTOP (ĐÃ THÊM CẤU HÌNH & KHUYẾN MÃI) -->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h3 id="desktop" class="title">Máy tính để bàn</h3>
+              <div class="section-nav">
+                <ul class="section-tab-nav tab-nav">
+                  <li><a href="#navigation">Trang chủ</a></li>
+                  <li><a href="#laptop">Laptop học tập</a></li>
+                  <li><a href="#desktop">Máy tính để bàn</a></li>
+                  <li><a href="#camera">Camera giám sát</a></li>
+                  <li><a href="#printer">Máy in</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab3" class="tab-pane fade in active">
+                  <div class="products-slick" data-nav="#slick-nav-3">
+                    <!-- SẢN PHẨM 1: PC GAMING -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/PC_Gamming.jpg" alt="PC Gaming" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span>
+                          <span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy tính bàn</p>
+                        <h3 class="product-name">
+                          <a href="#">Bộ PC Gaming</a>
+                        </h3>
+                        <div class="product-config">
+                          ⚡ Intel Core i5-12400F | RTX 3050 6GB | 16GB RAM DDR4
+                          | SSD 512GB NVMe
+                        </div>
+                        <div class="product-promo">
+                          <i class="fa fa-gift"></i> TẶNG MÀN HÌNH 22 inch
+                        </div>
+                        <h4 class="product-price">
+                          10.500.000 đ
+                          <del class="product-old-price">11.100.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i> <i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
 
+                    <!-- SẢN PHẨM 2: PC ĐỒ HỌA -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/PC_Do_Hoa.jpg" alt="PC Đồ Họa" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span>
+                          <span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy tính bàn</p>
+                        <h3 class="product-name">
+                          <a href="#">Bộ PC Đồ Họa</a>
+                        </h3>
+                        <div class="product-config">
+                          🎨 Intel Core i7-12700K | RTX 4060 8GB | 32GB RAM DDR5
+                          | SSD 1TB NVMe
+                        </div>
+                        <div class="product-promo">
+                          <i class="fa fa-gift"></i> TẶNG MÀN HÌNH 24 inch IPS
+                        </div>
+                        <h4 class="product-price">
+                          17.500.000 đ
+                          <del class="product-old-price">18.300.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i> <i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- SẢN PHẨM 3: PC VĂN PHÒNG / HỌC TẬP -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/PC_Van_Phong.jpg" alt="PC Văn Phòng" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span>
+                          <span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy tính bàn</p>
+                        <h3 class="product-name">
+                          <a href="#">Bộ PC Học tập, Văn phòng</a>
+                        </h3>
+                        <div class="product-config">
+                          📚 Intel Core i3-12100 | UHD Graphics 730 | 8GB RAM |
+                          SSD 256GB
+                        </div>
+                        <div class="product-promo">
+                          <i class="fa fa-gift"></i> TẶNG MÀN HÌNH 19.5 inch
+                        </div>
+                        <h4 class="product-price">
+                          8.600.000 đ
+                          <del class="product-old-price">9.100.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i> <i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Các sản phẩm máy in vẫn giữ nguyên (Canon, Brother) -->
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/may_in_2900.jpg" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span>
+                          <span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy In</p>
+                        <h3 class="product-name">
+                          <a href="#">Máy in Canon LBP 2900</a>
+                        </h3>
+                        <h4 class="product-price">
+                          2.500.000 đ
+                          <del class="product-old-price">3.000.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i> <i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="./img/may_in_brother_2321D.JPG" alt="" />
+                        <div class="product-label">
+                          <span class="sale">Lắp đặt tận nhà</span>
+                          <span class="new">Bảo hành 2 năm</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Máy In</p>
+                        <h3 class="product-name">
+                          <a href="#">Máy in Brother HL-L2321D</a>
+                        </h3>
+                        <h4 class="product-price">
+                          2.600.000 đ
+                          <del class="product-old-price">3.100.000 đ</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i><i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i> <i class="fa fa-star"></i
+                          ><i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> Liên hệ
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="slick-nav-3" class="products-slick-nav"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- SECTION DESKTOP-->
     <div class="section">
       <div class="container">
@@ -1041,7 +1340,7 @@
                   <div class="products-slick" data-nav="#slick-nav-3">
                     <div class="product">
                       <div class="product-img">
-                        <img src="./img/pc_gaming.png" alt="" />
+                        <img src="./img/PC_Gamming.jpg" alt="" />
                         <div class="product-label">
                           <span class="sale">Lắp đặt tận nhà</span
                           ><span class="new">Bảo hành 2 năm</span>
@@ -1087,7 +1386,7 @@
                     </div>
                     <div class="product">
                       <div class="product-img">
-                        <img src="./img/pc_dohoa.png" alt="" />
+                        <img src="./img/PC_Do_Hoa.jpg" alt="" />
                         <div class="product-label">
                           <span class="sale">Lắp đặt tận nhà</span
                           ><span class="new">Bảo hành 2 năm</span>
@@ -1133,7 +1432,7 @@
                     </div>
                     <div class="product">
                       <div class="product-img">
-                        <img src="./img/pc_van_phong.png" alt="" />
+                        <img src="./img/PC_Van_Phong.jpg" alt="" />
                         <div class="product-label">
                           <span class="sale">Lắp đặt tận nhà</span
                           ><span class="new">Bảo hành 2 năm</span>
